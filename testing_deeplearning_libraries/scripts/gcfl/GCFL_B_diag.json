@@ -1,0 +1,33 @@
+{
+  "clusters": 111,
+  "top_cluster_sizes": [
+    6,
+    5,
+    4,
+    4,
+    3,
+    3,
+    3,
+    3,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "singleton_clusters": 89,
+  "scenario_distribution": {
+    "OTHER": 78,
+    "SERIALIZATION_CHECKPOINTING": 14,
+    "TVM_RELAY_CODEGEN": 13,
+    "DATA_PIPELINE": 7,
+    "SPARSE": 5,
+    "DISTRIBUTED": 7,
+    "TRAINING_FIT_EVALUATE": 9,
+    "AUTOGRAD_BACKWARD": 8,
+    "DTYPE_PRECISION": 6,
+    "TRACING_GRAPH_FUNCTION": 2
+  }
+}

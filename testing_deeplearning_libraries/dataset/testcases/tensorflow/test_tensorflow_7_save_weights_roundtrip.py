@@ -1,0 +1,127 @@
+# FILE: GCFL-SERIALIZATION_CHECKPOINTING-0007_tf_save_weights_roundtrip.py
+import os, sys, json, tempfile, random
+
+os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", os.environ.get("TF_CPP_MIN_LOG_LEVEL", "2"))
+os.environ.setdefault("TF_DETERMINISTIC_OPS", "1")
+
+def _skip(reason: str):
+    print(f"SKIP_ENV: {reason}", flush=True)
+    sys.exit(0)
+
+def _pass():
+    print("Test Passed ✅", flush=True)
+    sys.exit(0)
+
+def _fail():
+    print("Test Failed ❌", flush=True)
+    sys.exit(0)
+
+def _norm_tfver(v: str) -> str:
+    v = (v or "").strip()
+    v = v.split("+", 1)[0]
+    v = v.split("-", 1)[0]
+    return v
+
+def _env_line(tf, np, knobs: dict):
+    payload = {
+        "python": sys.version.split()[0],
+        "tensorflow": getattr(tf, "__version__", "unknown"),
+        "numpy": getattr(np, "__version__", "unknown"),
+        "gpu_count": len(tf.config.list_physical_devices("GPU")),
+        "cpu_count": len(tf.config.list_physical_devices("CPU")),
+        "knobs": knobs,
+    }
+    print("ENV: " + json.dumps(payload, sort_keys=True), flush=True)
+
+def main():
+    if not (sys.version_info.major == 3 and sys.version_info.minor in (10, 11)):
+        _skip(f"Python not in {{3.10,3.11}}: {sys.version.split()[0]}")
+
+    try:
+        import numpy as np
+    except Exception as e:
+        _skip(f"numpy import failed: {type(e).__name__}: {e}")
+
+    try:
+        import tensorflow as tf
+    except Exception as e:
+        _skip(f"tensorflow import failed: {type(e).__name__}: {e}")
+
+    if _norm_tfver(getattr(tf, "__version__", "")) != "2.20.0":
+        _skip(f"tensorflow version != 2.20.0: {getattr(tf,'__version__','unknown')}")
+
+    seed = int(os.environ.get("SEED", "2026"))
+    batch = int(os.environ.get("BATCH", "2"))
+    d_model = int(os.environ.get("D_MODEL", "16"))
+
+    random.seed(seed)
+    np.random.seed(seed)
+    try:
+        tf.random.set_seed(seed)
+    except Exception:
+        pass
+
+    _env_line(tf, np, {"SEED": seed, "BATCH": batch, "D_MODEL": d_model})
+
+    def build():
+        x = tf.keras.Input(shape=(d_model,), name="x")
+        y = tf.keras.layers.Dense(16, activation="relu")(x)
+        y = tf.keras.layers.Dense(4)(y)
+        return tf.keras.Model(x, y)
+
+    x = np.random.RandomState(seed).randn(batch, d_model).astype("float32")
+
+    with tempfile.TemporaryDirectory() as td:
+        wpath = os.path.join(td, "w.weights.h5")
+        try:
+            m = build()
+            y0 = m(x, training=False).numpy()
+            m.save_weights(wpath)
+
+            m2 = build()
+            m2.load_weights(wpath)
+            y1 = m2(x, training=False).numpy()
+
+            if not (y0.shape == y1.shape and abs(float((y0 - y1).max())) <= 0.0):
+                _pass()
+        except Exception:
+            _pass()
+
+    _fail()
+
+if __name__ == "__main__":
+    try:
+        main()
+    except SystemExit:
+        raise
+    except Exception as e:
+        _skip(f"harness_error: {type(e).__name__}: {e}")
+
+
+
+# Output:
+# *****************
+# bug no: GCFL-SERIALIZATION_CHECKPOINTING-0007_tf_save_weights_roundtrip
+# Result: Test Failed ❌
+
+# Triggering command:
+# conda activate tf_venv_220_py311
+# cd ~/dl_testing
+# export CUDA_VISIBLE_DEVICES=0
+# export TF_CPP_MIN_LOG_LEVEL=2
+# export TF_DETERMINISTIC_OPS=1
+# export KERAS_BACKEND=tensorflow
+# export SEED=2026
+# /home/talha/miniconda3/envs/tf_venv_220_py311/bin/python3.11 \
+#   testcases/tf_serialization_inputs/GCFL-SERIALIZATION_CHECKPOINTING-0007_tf_save_weights_roundtrip.py \
+#   > logs/GCFL-SERIALIZATION_CHECKPOINTING-0007_tf_save_weights_roundtrip_stdout.log \
+#   2> logs/GCFL-SERIALIZATION_CHECKPOINTING-0007_tf_save_weights_roundtrip_stderr.log
+# echo "exit_code=$?"
+# cat logs/GCFL-SERIALIZATION_CHECKPOINTING-0007_tf_save_weights_roundtrip_stdout.log
+
+# Observed output:
+# exit_code=0
+# Test Failed ❌
+
+# Note:
+# No suspicious mismatch was observed for save_weights/load_weights roundtrip in this run.

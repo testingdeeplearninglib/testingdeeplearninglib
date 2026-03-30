@@ -1,5 +1,5 @@
 
-# Replication Package (ASE 2026) - Testing Deep-Learning libraries 
+# Replication Package - Testing Deep-Learning libraries 
 
 This repository is the replication package for our ASE 2026 submission entitled as  "LLM-based Feature-Guided Test Case Generation for Deep Learning Libraries".
 
@@ -10,7 +10,6 @@ This repository is the replication package for our ASE 2026 submission entitled 
 </p>
 
 <p align="center">
-  <em>Figure 1. End-to-end workflow of the proposed bug-driven, GCFL-guided testcase generation and validation pipeline.</em>
 </p>
 
 The artifact contains:
@@ -21,9 +20,8 @@ The artifact contains:
 - The Bugs reported to their respected DL libraries Bug repositories (reported_bugs.pdf) .
 ---
 
-## What you can reproduce
 
-### Main pipeline (end-to-end)
+### Main pipeline
 1) **Structured bug entries**
 2) **GCFL clustering**
 3) **Prompt packs** 
@@ -63,7 +61,7 @@ testing_deeplearning_libraries/
 
 ````
 
-## Execution contract (non-negotiable)
+## Execution contract 
 
 Every testcase in this repo follows the same **machine-checkable contract**.
 

@@ -1,0 +1,4465 @@
+[
+  {
+    "gcfl_id": "GCFL-OTHER-0001",
+    "scenario_type": "OTHER",
+    "cluster_size": 21,
+    "library_purity": 0.476,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "crash",
+      "exception",
+      "logging_based",
+      "mode_mismatch",
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:TAG_inference",
+      "CFAM:TAG_multi_gpu",
+      "CFAM:TAG_rnn",
+      "CFAM:TAG_tensorarray",
+      "CFAM:TAG_grappler",
+      "CFAM:TAG_gpu",
+      "CFAM:TAG_shape_inference",
+      "CFAM:TAG_tf_backend",
+      "CFAM:TAG_mirrored_strategy",
+      "CFAM:TAG_tpu",
+      "CFAM:TAG_conv2d",
+      "CFAM:TAG_tf_estimator",
+      "CFAM:TAG_eager_execution",
+      "CFAM:TAG_gradient_tape",
+      "CFAM:TAG_tf2"
+    ],
+    "top_keywords": [
+      "tensorflow",
+      "has",
+      "keras",
+      "failed",
+      "attributeerror",
+      "object",
+      "attribute",
+      "inference",
+      "rnn",
+      "mode_mismatch",
+      "tpu",
+      "graph",
+      "mirroredstrategy",
+      "parse",
+      "starcoder",
+      "working",
+      "autotp",
+      "exception_tensor_parallel_shape_split_mismatch",
+      "params",
+      "unused"
+    ],
+    "evidence_members": [
+      {
+        "library": "DeepSpeed",
+        "bug_no": 4511,
+        "title": "[BUG] StarCoder inference not working with AutoTP",
+        "url": "https://github.com/deepspeedai/DeepSpeed/issues/4511"
+      },
+      {
+        "library": "DeepSpeed",
+        "bug_no": 4094,
+        "title": "[BUG] Unused params lead to \"still have inflight params\" error",
+        "url": "https://github.com/deepspeedai/DeepSpeed/issues/4094"
+      },
+      {
+        "library": "DeepSpeed",
+        "bug_no": 2760,
+        "title": "[BUG] Zeros in returned k_v cache when get_present = True",
+        "url": "https://github.com/deepspeedai/DeepSpeed/issues/2760"
+      },
+      {
+        "library": "keras",
+        "bug_no": 19395,
+        "title": "RNN layers ignore recurrent_dropout parameter",
+        "url": "[https://github.com/keras-team/keras/issues/19395](https://github.com/keras-team/keras/issues/19395)"
+      },
+      {
+        "library": "keras",
+        "bug_no": 19982,
+        "title": "\"ValueError: Undefined shapes are not supported.\" when calling model.call()",
+        "url": "[https://github.com/keras-team/keras/issues/19982](https://github.com/keras-team/keras/issues/19982)"
+      },
+      {
+        "library": "keras",
+        "bug_no": 20048,
+        "title": "keras.ops.map can't handle nested structures for TensorFlow backend",
+        "url": "[https://github.com/keras-team/keras/issues/20048](https://github.com/keras-team/keras/issues/20048)"
+      },
+      {
+        "library": "keras",
+        "bug_no": 20568,
+        "title": "Keras 3.7 Broke My Code",
+        "url": "[https://github.com/keras-team/keras/issues/20568](https://github.com/keras-team/keras/issues/20568)"
+      },
+      {
+        "library": "keras",
+        "bug_no": 21116,
+        "title": "Splash Attention is Broken on TPU Pods and does not follow keras.config.disable_flash_attention()",
+        "url": "[https://github.com/keras-team/keras/issues/21116](https://github.com/keras-team/keras/issues/21116)"
+      },
+      {
+        "library": "Apache MXNet (Keras MXNet backend)",
+        "bug_no": 17250,
+        "title": "mxnet.base.MXNetError: Error in operator transpose176: Check failed: shp.ndim() == param.axes.ndim() (-1 vs. 4)",
+        "url": "https://github.com/apache/mxnet/issues/17250"
+      },
+      {
+        "library": "TensorFlow",
+        "bug_no": 2127,
+        "title": "tf.nn.dynamic_rnn fails when batch_size is 0",
+        "url": "https://github.com/tensorflow/tensorflow/issues/2127"
+      },
+      {
+        "library": "tensorflow",
+        "bug_no": 23048,
+        "title": "Bug in function: MutableGraphView::ReplaceInput(..) ?",
+        "url": "https://github.com/tensorflow/tensorflow/issues/23048"
+      },
+      {
+        "library": "TensorFlow",
+        "bug_no": 24370,
+        "title": "Use retrained graph with tensorflow in C",
+        "url": "https://github.com/tensorflow/tensorflow/issues/24370"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0002",
+    "scenario_type": "OTHER",
+    "cluster_size": 6,
+    "library_purity": 0.5,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "backend_mismatch",
+      "exception",
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:TAG_post_training_quantization",
+      "CFAM:TAG_tflite",
+      "CFAM:TAG_bazel_build",
+      "CFAM:ORID_raises_unboundlocalerror_dshapes",
+      "CFAM:PRE_api_call_quantize_net_v2",
+      "CFAM:PRE_mxnet_contrib_quantization_module",
+      "CFAM:TAG_api_argument_validation",
+      "CFAM:TAG_calibration",
+      "CFAM:TAG_mxnet_contrib",
+      "CFAM:TAG_none_input",
+      "CFAM:TAG_quantization",
+      "CFAM:TAG_unboundlocalerror",
+      "CFAM:TRIG_calib_data_none_in_quantize_net_v2",
+      "CFAM:TRIG_uninitialized_dshapes_path_reached",
+      "CFAM:ORID_cxx_compile_error_undeclared_string"
+    ],
+    "top_keywords": [
+      "tflite",
+      "unboundlocalerror",
+      "local",
+      "variable",
+      "dshapes",
+      "referenced",
+      "assignment",
+      "using",
+      "quantize_net_v2",
+      "calib_data",
+      "none",
+      "exception_unboundlocal_in_quantize_net_v2_calib_none",
+      "benchmark_model",
+      "compile_error",
+      "delegates",
+      "libmetal_delegate",
+      "missing",
+      "build_artifact_missing_for_gpu_delegate",
+      "unable",
+      "quantize"
+    ],
+    "evidence_members": [
+      {
+        "library": "Apache MXNet",
+        "bug_no": 19477,
+        "title": "\"UnboundLocalError: local variable 'dshapes' referenced before assignment\" when using quantize_net_v2 with calib_data=None",
+        "url": "https://github.com/apache/mxnet/issues/19477"
+      },
+      {
+        "library": "tensorflow",
+        "bug_no": 20545,
+        "title": "Bug in tflite benchmark_model",
+        "url": "https://github.com/tensorflow/tensorflow/issues/20545"
+      },
+      {
+        "library": "tensorflow",
+        "bug_no": 27325,
+        "title": "TFLite delegates/gpu/libmetal_delegate.a is missing",
+        "url": "https://github.com/tensorflow/tensorflow/issues/27325"
+      },
+      {
+        "library": "TensorFlow Lite",
+        "bug_no": 30838,
+        "title": "Unable to quantize buffer or min/max value for input 1 in op MUL in subgraph 0, node: 8",
+        "url": "https://github.com/tensorflow/tensorflow/issues/30838"
+      },
+      {
+        "library": "tensorflow (tensorflow_model_optimization + keras integration)",
+        "bug_no": 64721,
+        "title": "tensorflow_model_optimization,quantization.keras.quantize_model raises exception on its documentation example",
+        "url": "https://github.com/tensorflow/tensorflow/issues/64721"
+      },
+      {
+        "library": "tensorflow",
+        "bug_no": 83754,
+        "title": "Failing to convert MobileNetV3Large to TFLite w/ Integer q",
+        "url": "https://github.com/tensorflow/tensorflow/issues/83754"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-AUTOGRAD_BACKWARD-0003",
+    "scenario_type": "AUTOGRAD_BACKWARD",
+    "cluster_size": 6,
+    "library_purity": 0.5,
+    "top_library": "TensorFlow",
+    "oracle_types": [
+      "exception",
+      "grad_mismatch",
+      "mode_mismatch",
+      "nondeterminism",
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:TAG_autodiff",
+      "CFAM:TAG_gradient",
+      "CFAM:ORID_grad_contains_nan_or_inf",
+      "CFAM:ORID_nondeterministic_fail_then_recover_same_input",
+      "CFAM:PRE_autograd_backward_on_embedding",
+      "CFAM:PRE_cuda_9_x_prebuilt_mxnet_cu90_cu92",
+      "CFAM:PRE_gpu_cuda_execution",
+      "CFAM:PRE_large_batch_shape_pressure",
+      "CFAM:TAG_autograd",
+      "CFAM:TAG_backward",
+      "CFAM:TAG_cuda",
+      "CFAM:TAG_embedding",
+      "CFAM:TAG_gpu",
+      "CFAM:TAG_nan",
+      "CFAM:TAG_nondeterminism"
+    ],
+    "top_keywords": [
+      "gradient",
+      "embedding",
+      "backward",
+      "addtakegradlargebatchcaller",
+      "non_deterministic",
+      "nan",
+      "nondeterministic_nan_in_embedding_backward_cuda_kernel_path",
+      "matmul",
+      "gradients",
+      "incorrect",
+      "complex64",
+      "grad_incorrectness_complex_conjugation",
+      "fill",
+      "has",
+      "was",
+      "valueerror",
+      "inputs",
+      "provided",
+      "creating",
+      "optimizer"
+    ],
+    "evidence_members": [
+      {
+        "library": "Apache MXNet",
+        "bug_no": 11314,
+        "title": "Embedding Backward (AddTakeGradLargeBatchCaller) non-deterministic nan values",
+        "url": "https://github.com/apache/mxnet/issues/11314"
+      },
+      {
+        "library": "TensorFlow",
+        "bug_no": 378,
+        "title": "matmul gradients incorrect with complex64 tensors",
+        "url": "https://github.com/tensorflow/tensorflow/issues/378"
+      },
+      {
+        "library": "TensorFlow",
+        "bug_no": 686,
+        "title": "tf.Fill has no gradient. (Was: \"ValueError: No inputs provided\" when creating optimizer, seems like a bug)",
+        "url": "https://github.com/tensorflow/tensorflow/issues/686"
+      },
+      {
+        "library": "TensorFlow",
+        "bug_no": 897,
+        "title": "gradient of tf.floor",
+        "url": "https://github.com/tensorflow/tensorflow/issues/897"
+      },
+      {
+        "library": "tensorflow",
+        "bug_no": 3359,
+        "title": "Gradient computation fails concatenation in while_loop() body",
+        "url": "https://github.com/tensorflow/tensorflow/issues/3359"
+      },
+      {
+        "library": "tensorflow",
+        "bug_no": 44502,
+        "title": "Jacobian fails on gradient of tf.function with if-elif-else or nested tf.cond",
+        "url": "https://github.com/tensorflow/tensorflow/issues/44502"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-DISTRIBUTED-0004",
+    "scenario_type": "DISTRIBUTED",
+    "cluster_size": 5,
+    "library_purity": 0.6,
+    "top_library": "DeepSpeed",
+    "oracle_types": [
+      "logging_based",
+      "mode_mismatch",
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:TAG_distributed_training",
+      "CFAM:TAG_multi_gpu",
+      "CFAM:ORID_distributed_vs_baseline_output_mismatch",
+      "CFAM:ORID_no_exception_but_incorrect_output",
+      "CFAM:PRE_global_seq_len_not_divisible_by_world_size",
+      "CFAM:PRE_multi_gpu_nccl_process_group",
+      "CFAM:PRE_pytorch_sdpa_backend_non_math",
+      "CFAM:PRE_sequence_parallel_context_group",
+      "CFAM:TAG_attention",
+      "CFAM:TAG_nccl",
+      "CFAM:TAG_output_mismatch",
+      "CFAM:TAG_sdpa",
+      "CFAM:TAG_sequence_parallel",
+      "CFAM:TAG_silent_corruption",
+      "CFAM:TAG_variable_length"
+    ],
+    "top_keywords": [
+      "incorrect",
+      "output",
+      "distributed",
+      "ulysses",
+      "distributedattention",
+      "silently",
+      "produces",
+      "does",
+      "divide",
+      "global",
+      "sequence",
+      "length",
+      "silent_output_corruption_varlen_sequence_parallel_attention",
+      "deepspeed",
+      "overlap_comm",
+      "data",
+      "race",
+      "cuda_stream_data_race_overlap_comm_ipg_buffer",
+      "some",
+      "zero3"
+    ],
+    "evidence_members": [
+      {
+        "library": "DeepSpeed",
+        "bug_no": 7384,
+        "title": "[BUG] Ulysses DistributedAttention silently produces incorrect output when #GPUs does not divide global sequence length",
+        "url": "https://github.com/deepspeedai/DeepSpeed/issues/7384"
+      },
+      {
+        "library": "DeepSpeed",
+        "bug_no": 5545,
+        "title": "[BUG] deepspeed overlap_comm data race",
+        "url": "https://github.com/deepspeedai/DeepSpeed/issues/5545"
+      },
+      {
+        "library": "DeepSpeed",
+        "bug_no": 5041,
+        "title": "[BUG] In zero3 mode, how to set nn.Linear weight (some parameters can be updated, but some cannot).",
+        "url": "https://github.com/deepspeedai/DeepSpeed/issues/5041"
+      },
+      {
+        "library": "keras",
+        "bug_no": 19891,
+        "title": "Keras 3 gives incorrect output from evaluate/fit in distributed context",
+        "url": "[https://github.com/keras-team/keras/issues/19891](https://github.com/keras-team/keras/issues/19891)"
+      },
+      {
+        "library": "TensorFlow",
+        "bug_no": 20585,
+        "title": "non-chief workers hang in training distributed seq2seq model when time-major is true",
+        "url": "https://github.com/tensorflow/tensorflow/issues/20585"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0005",
+    "scenario_type": "OTHER",
+    "cluster_size": 5,
+    "library_purity": 0.8,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "crash",
+      "exception",
+      "mode_mismatch",
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:TAG_tir",
+      "CFAM:TAG_thread_binding",
+      "CFAM:TAG_meta_schedule",
+      "CFAM:ORID_invalid_global_memory_access_offsets_out_of_range",
+      "CFAM:PRE_gpu_thread_binding_present",
+      "CFAM:PRE_outer_axis_guard_required",
+      "CFAM:PRE_reduction_extent_depends_on_outer_axis",
+      "CFAM:PRE_tvm_te_to_tir_lowering",
+      "CFAM:TAG_bound_checking",
+      "CFAM:TAG_gpu_codegen",
+      "CFAM:TAG_indirect_indexing",
+      "CFAM:TAG_ragged_sparse",
+      "CFAM:TAG_reduce_axis",
+      "CFAM:TAG_te_schedule",
+      "CFAM:TAG_tvm"
+    ],
+    "top_keywords": [
+      "for",
+      "support",
+      "boundary",
+      "checking",
+      "loop",
+      "dependent",
+      "iterators",
+      "invalid_memory_access_due_to_missing_bounds_check_on_loop_dependent_index_tensor_access",
+      "tree",
+      "reduction",
+      "shared",
+      "memory",
+      "buggy",
+      "there",
+      "threadidx",
+      "output_mismatch",
+      "metaschedule",
+      "failed",
+      "run",
+      "apply_trace"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 6596,
+        "title": "Support Boundary Checking for Loop Dependent Iterators",
+        "url": "[https://github.com/apache/tvm/issues/6596](https://github.com/apache/tvm/issues/6596)"
+      },
+      {
+        "library": "apache_tvm",
+        "bug_no": 10210,
+        "title": "[Bug] Tree reduction with shared memory is buggy where there is threadIdx.y",
+        "url": "https://github.com/apache/tvm/issues/10210"
+      },
+      {
+        "library": "apache_tvm",
+        "bug_no": 14112,
+        "title": "[Bug][MetaSchedule] failed to run `apply_trace` generated by `print(sch.trace)` for int8 conv2d workload",
+        "url": "https://github.com/apache/tvm/issues/14112"
+      },
+      {
+        "library": "apache_tvm",
+        "bug_no": 15522,
+        "title": "[Bug] [MetaScheduler] [TensorIR] Stride values are not inferred within _impl() block.",
+        "url": "https://github.com/apache/tvm/issues/15522"
+      },
+      {
+        "library": "Apache TVM",
+        "bug_no": 17592,
+        "title": "[Meta-schedule][Feature extraction] Incorrect Assignment of is_gpu Property",
+        "url": "https://github.com/apache/tvm/issues/17592"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0006",
+    "scenario_type": "OTHER",
+    "cluster_size": 5,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "exception",
+      "logging_based",
+      "mode_mismatch"
+    ],
+    "top_families": [
+      "CFAM:TAG_model_fit",
+      "CFAM:PRE_tensorflow_backend",
+      "CFAM:TAG_keras_3",
+      "CFAM:ORID_perf_regression_time_per_epoch",
+      "CFAM:PRE_backend_native_tensor_input",
+      "CFAM:PRE_model_fit_array_inputs",
+      "CFAM:TAG_data_adapter",
+      "CFAM:TAG_multi_backend",
+      "CFAM:TAG_performance_regression_risk",
+      "CFAM:TAG_tensor_conversion",
+      "CFAM:TRIG_array_data_adapter_roundtrip_numpy_conversion",
+      "CFAM:TRIG_torch_cuda_device_input_potential_host_roundtrip",
+      "CFAM:ORID_partially_known_tensorshape_to_tensor_conversion_error",
+      "CFAM:PRE_confusion_metric_path",
+      "CFAM:PRE_dynamic_batch_dimension"
+    ],
+    "top_keywords": [
+      "arraydataadapter",
+      "will",
+      "needlessly",
+      "convert",
+      "backend",
+      "native",
+      "performance",
+      "update_confusion_matrix_variables",
+      "tensorflow",
+      "shape_handling_error",
+      "constraint",
+      "parameter",
+      "for",
+      "add_weight",
+      "class",
+      "does",
+      "accept",
+      "functions",
+      "contract",
+      "callable"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 18408,
+        "title": "ArrayDataAdapter will needlessly convert backend native tensors",
+        "url": "[https://github.com/keras-team/keras/issues/18408](https://github.com/keras-team/keras/issues/18408)"
+      },
+      {
+        "library": "keras",
+        "bug_no": 18620,
+        "title": "Shape error of `update_confusion_matrix_variables` with tensorflow",
+        "url": "[https://github.com/keras-team/keras/issues/18620](https://github.com/keras-team/keras/issues/18620)"
+      },
+      {
+        "library": "keras",
+        "bug_no": 20067,
+        "title": "constraint parameter for add_weight of layers.class does not accept functions.",
+        "url": "[https://github.com/keras-team/keras/issues/20067](https://github.com/keras-team/keras/issues/20067)"
+      },
+      {
+        "library": "keras",
+        "bug_no": 20346,
+        "title": "Multi-output model training broken due to unexpected tree.flatten behavior",
+        "url": "[https://github.com/keras-team/keras/issues/20346](https://github.com/keras-team/keras/issues/20346)"
+      },
+      {
+        "library": "keras",
+        "bug_no": 20391,
+        "title": "How to implement metrics with a signature other than `fn(y_true, y_pred)`?",
+        "url": "[https://github.com/keras-team/keras/issues/20391](https://github.com/keras-team/keras/issues/20391)"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-SERIALIZATION_CHECKPOINTING-0007",
+    "scenario_type": "SERIALIZATION_CHECKPOINTING",
+    "cluster_size": 4,
+    "library_purity": 0.5,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "exception",
+      "logging_based",
+      "mode_mismatch",
+      "serialization_mismatch"
+    ],
+    "top_families": [
+      "CFAM:TAG_serialization",
+      "CFAM:ORID_load_preset_raises_missing_variables_valueerror",
+      "CFAM:PRE_model_is_quantized_int8",
+      "CFAM:PRE_multimodal_preset_target",
+      "CFAM:PRE_uses_keras_hub_preset_flow",
+      "CFAM:TAG_int8_quantization",
+      "CFAM:TAG_keras_hub",
+      "CFAM:TAG_llm_model",
+      "CFAM:TAG_multimodal_model",
+      "CFAM:TAG_preset_loading",
+      "CFAM:TAG_weights_loading",
+      "CFAM:TRIG_keras_hub_from_preset_loads_quantized_weights",
+      "CFAM:TRIG_missing_variables_in_reversible_embedding_on_load",
+      "CFAM:TRIG_multiple_attention_dense_layers_fail_to_restore",
+      "CFAM:TRIG_plain_keras_quantize_save_load_works"
+    ],
+    "top_keywords": [
+      "keras",
+      "serialization",
+      "load",
+      "quantized",
+      "for",
+      "keras_hub",
+      "presets",
+      "missing",
+      "variables",
+      "block",
+      "export",
+      "serialization_export_assertion_due_to_unused_params",
+      "tf2",
+      "sequential",
+      "serialization_deserialization_incompatibility",
+      "initializers",
+      "zeros",
+      "causes",
+      "save",
+      "fail"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 21378,
+        "title": "Keras Fails to load quantized model",
+        "url": "[https://github.com/keras-team/keras/issues/21378](https://github.com/keras-team/keras/issues/21378)"
+      },
+      {
+        "library": "Apache MXNet",
+        "bug_no": 17981,
+        "title": "block.export bug",
+        "url": "https://github.com/apache/mxnet/issues/17981"
+      },
+      {
+        "library": "tensorflow",
+        "bug_no": 26707,
+        "title": "[TF2.0] Sequential API serialization bug",
+        "url": "https://github.com/tensorflow/tensorflow/issues/26707"
+      },
+      {
+        "library": "tensorflow",
+        "bug_no": 47054,
+        "title": "tf.keras.initializers.zeros causes model.save to fail, while tf.keras.initializers.Zeros() works great",
+        "url": "https://github.com/tensorflow/tensorflow/issues/47054"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TVM_RELAY_CODEGEN-0008",
+    "scenario_type": "TVM_RELAY_CODEGEN",
+    "cluster_size": 3,
+    "library_purity": 1.0,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "crash",
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:TAG_onnx_import",
+      "CFAM:TAG_relay",
+      "CFAM:ORID_diagnosticerror_on_relay_infer_type",
+      "CFAM:PRE_conv_transpose_group_not_one",
+      "CFAM:PRE_grouped_shapes_consistent_with_onnx",
+      "CFAM:PRE_tvm_onnx_frontend_relay_build_path",
+      "CFAM:TAG_conv_transpose",
+      "CFAM:TAG_grouped_conv",
+      "CFAM:TAG_tvmc",
+      "CFAM:TAG_type_inference",
+      "CFAM:TRIG_onnx_convtranspose_grouped_import_typecheck_fail",
+      "CFAM:TRIG_relay_infer_type_dimension_conflict_zero",
+      "CFAM:ORID_type_infer_crash_on_reduce_empty_axes",
+      "CFAM:PRE_onnx_frontend_conversion_path",
+      "CFAM:PRE_reduce_axis_unspecified_or_empty"
+    ],
+    "top_keywords": [
+      "onnx",
+      "convtranspose",
+      "group",
+      "relay",
+      "type",
+      "checker",
+      "throws",
+      "edgecase",
+      "scalar",
+      "reduce",
+      "cann",
+      "parse",
+      "strides",
+      "for",
+      "lppool",
+      "missing_optional_attribute_handling"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 9885,
+        "title": "[Bug] [ONNX] ConvTranspose with `group != 1`: Relay type checker throws",
+        "url": "https://github.com/apache/tvm/issues/9885"
+      },
+      {
+        "library": "apache_tvm",
+        "bug_no": 10738,
+        "title": "[Bug][ONNX][EdgeCase] Crash on Scalar Reduce",
+        "url": "https://github.com/apache/tvm/issues/10738"
+      },
+      {
+        "library": "apache_tvm",
+        "bug_no": 14661,
+        "title": "[Bug][ONNX] cann't parse strides for LpPool",
+        "url": "https://github.com/apache/tvm/issues/14661"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-DATA_PIPELINE-0009",
+    "scenario_type": "DATA_PIPELINE",
+    "cluster_size": 3,
+    "library_purity": 1.0,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "crash",
+      "exception",
+      "logging_based"
+    ],
+    "top_families": [
+      "CFAM:TAG_tf_data",
+      "CFAM:TAG_tfrecord",
+      "CFAM:ORID_apparent_cross_example_feature_swap_in_printed_output",
+      "CFAM:PRE_features_fixedlen_floats",
+      "CFAM:PRE_tf1_graph_session_mode",
+      "CFAM:PRE_tfrecord_with_multiple_examples",
+      "CFAM:TAG_iterator",
+      "CFAM:TAG_parse_single_example",
+      "CFAM:TAG_session_graph_mode",
+      "CFAM:TAG_session_run_eval_semantics",
+      "CFAM:TRIG_iterator_get_next_used_with_derived_tensors_evaluated_separately",
+      "CFAM:TRIG_multiple_consumptions_across_separate_session_runs",
+      "CFAM:ORID_unknown_rank_len_shape_valueerror",
+      "CFAM:PRE_dataset_element_has_unknown_rank",
+      "CFAM:PRE_tf_keras_model_fit_input_pipeline"
+    ],
+    "top_keywords": [
+      "dataset",
+      "tfrecorddataset",
+      "entries",
+      "shuffle",
+      "between",
+      "examples",
+      "logging_based",
+      "valueerror",
+      "cannot",
+      "take",
+      "the",
+      "length",
+      "unknown",
+      "rank",
+      "passing",
+      "data",
+      "deadlock",
+      "hang",
+      "generator",
+      "results"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow",
+        "bug_no": 23098,
+        "title": "TFRecordDataset entries shuffle between examples",
+        "url": "https://github.com/tensorflow/tensorflow/issues/23098"
+      },
+      {
+        "library": "tensorflow",
+        "bug_no": 24520,
+        "title": "\"ValueError: Cannot take the length of Shape with unknown rank\". error when passing tf.data.Dataset tensors to model.fit",
+        "url": "https://github.com/tensorflow/tensorflow/issues/24520"
+      },
+      {
+        "library": "tensorflow",
+        "bug_no": 50637,
+        "title": "model.fit with dataset generator results in deadlock/hang",
+        "url": "https://github.com/tensorflow/tensorflow/issues/50637"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-DISTRIBUTED-0010",
+    "scenario_type": "DISTRIBUTED",
+    "cluster_size": 2,
+    "library_purity": 1.0,
+    "top_library": "DeepSpeed",
+    "oracle_types": [
+      "crash",
+      "exception",
+      "logging_based"
+    ],
+    "top_families": [
+      "CFAM:PRE_bf16_mixed_precision",
+      "CFAM:TAG_mixed_precision_bf16",
+      "CFAM:ORID_typeerror_allgather_dtype_mismatch",
+      "CFAM:PRE_deepspeed_zero3_active",
+      "CFAM:PRE_mixtral_moe_model",
+      "CFAM:PRE_multi_gpu_distributed_training",
+      "CFAM:PRE_qlora_4bit_quantization",
+      "CFAM:PRE_zero3_leaf_module_annotation",
+      "CFAM:TAG_accelerate",
+      "CFAM:TAG_all_gather",
+      "CFAM:TAG_bitsandbytes",
+      "CFAM:TAG_deepspeed",
+      "CFAM:TAG_dtype_mismatch",
+      "CFAM:TAG_huggingface_transformers",
+      "CFAM:TAG_mixtral_moe"
+    ],
+    "top_keywords": [
+      "mixtral",
+      "qlora",
+      "zero3",
+      "occured",
+      "distributed_collective_dtype_mismatch_zero3_moe_qlora",
+      "deepspeed",
+      "zero",
+      "inference",
+      "inflight",
+      "params",
+      "new",
+      "huggingface",
+      "distributed_collective_mismatch_or_inflight_params_in_zero3_moe"
+    ],
+    "evidence_members": [
+      {
+        "library": "DeepSpeed",
+        "bug_no": 5049,
+        "title": "[BUG] Mixtral + QLoRA + zero3 occured error",
+        "url": "https://github.com/deepspeedai/DeepSpeed/issues/5049"
+      },
+      {
+        "library": "DeepSpeed",
+        "bug_no": 4808,
+        "title": "[BUG] Deepspeed Zero 3 Inference InFlight Params with new HuggingFace Mixtral Model",
+        "url": "https://github.com/deepspeedai/DeepSpeed/issues/4808"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0011",
+    "scenario_type": "OTHER",
+    "cluster_size": 2,
+    "library_purity": 1.0,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:PRE_tvm_relax_onnx_import_path",
+      "CFAM:TAG_cpu",
+      "CFAM:TAG_onnx_frontend",
+      "CFAM:TAG_relax",
+      "CFAM:ORID_import_time_tvmerror_requires_tensor_for_astype",
+      "CFAM:PRE_cpu_with_llvm_enabled",
+      "CFAM:PRE_tvm_version_regression_main_dev",
+      "CFAM:TAG_cast",
+      "CFAM:TAG_from_onnx",
+      "CFAM:TAG_llvm",
+      "CFAM:TAG_shape_expr",
+      "CFAM:TAG_struct_info_inference",
+      "CFAM:TRIG_cast_applied_to_relax_shape_object",
+      "CFAM:TRIG_failure_during_blockbuilder_normalize_structinfo",
+      "CFAM:TRIG_multi_cast_in_graph_second_cast_fails"
+    ],
+    "top_keywords": [
+      "converting",
+      "operator",
+      "cast",
+      "inputs",
+      "x_0",
+      "x_1",
+      "the",
+      "input",
+      "layernormalization",
+      "internalerror",
+      "relax",
+      "layer_norm",
+      "requires",
+      "gamma",
+      "have",
+      "many",
+      "dimensions",
+      "length",
+      "axes",
+      "import_error"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 17671,
+        "title": "[Bug] Error converting operator Cast, with inputs: [R.shape([x_0, x_1])]",
+        "url": "https://github.com/apache/tvm/issues/17671"
+      },
+      {
+        "library": "apache_tvm",
+        "bug_no": 18136,
+        "title": "[Bug] Error converting operator LayerNormalization: InternalError: Op(relax.nn.layer_norm) requires the input gamma to have as many dimensions as the length of input axes.",
+        "url": "https://github.com/apache/tvm/issues/18136"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TRAINING_FIT_EVALUATE-0012",
+    "scenario_type": "TRAINING_FIT_EVALUATE",
+    "cluster_size": 2,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "exception",
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:TAG_compile_loss",
+      "CFAM:TAG_model_compute_loss",
+      "CFAM:TAG_structured_y_true",
+      "CFAM:ORID_compute_loss_raises_on_structured_y_true",
+      "CFAM:ORID_loss_value_match_direct_call",
+      "CFAM:PRE_model_is_compiled_before_compute_loss",
+      "CFAM:PRE_reported_env_keras_3_3_3_tf_2_16_1",
+      "CFAM:TAG_compile_utils",
+      "CFAM:TAG_custom_loss",
+      "CFAM:TAG_dict_input",
+      "CFAM:TAG_tuple_input",
+      "CFAM:TRIG_custom_loss_unpacks_structured_y_true",
+      "CFAM:TRIG_loss_provided_as_plain_callable_without_specs",
+      "CFAM:TRIG_structured_y_true_dict_converted_to_list",
+      "CFAM:TRIG_structured_y_true_tuple_multi_tensor_single_loss"
+    ],
+    "top_keywords": [
+      "compileloss",
+      "truncates",
+      "multiple",
+      "loss",
+      "inputs"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 19855,
+        "title": "`CompileLoss` truncates multiple loss inputs",
+        "url": "[https://github.com/keras-team/keras/issues/19855](https://github.com/keras-team/keras/issues/19855)"
+      },
+      {
+        "library": "keras",
+        "bug_no": 19855,
+        "title": "`CompileLoss` truncates multiple loss inputs",
+        "url": "[https://github.com/keras-team/keras/issues/19855](https://github.com/keras-team/keras/issues/19855)"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-SERIALIZATION_CHECKPOINTING-0013",
+    "scenario_type": "SERIALIZATION_CHECKPOINTING",
+    "cluster_size": 2,
+    "library_purity": 0.5,
+    "top_library": "keras (tensorflow backend)",
+    "oracle_types": [
+      "exception",
+      "serialization_mismatch"
+    ],
+    "top_families": [
+      "CFAM:TAG_saved_model",
+      "CFAM:ORID_save_restore_state_missing_or_mismatch",
+      "CFAM:PRE_keras_tracker_wraps_list_dict",
+      "CFAM:PRE_state_stored_in_list_or_dict_container",
+      "CFAM:PRE_tf_backend_layer_is_autotrackable",
+      "CFAM:TAG_checkpointing",
+      "CFAM:TAG_container_attribute",
+      "CFAM:TAG_layer_state",
+      "CFAM:TAG_tf_autotrackable",
+      "CFAM:TAG_tracking",
+      "CFAM:TRIG_dict_subclass_breaks_tf_autotrackable_tracking",
+      "CFAM:TRIG_list_subclass_breaks_tf_autotrackable_tracking",
+      "CFAM:TRIG_tf_saved_model_or_checkpoint_used",
+      "CFAM:ORID_valueerror_non_tensor_signature_output",
+      "CFAM:PRE_ragged_output_from_function"
+    ],
+    "top_keywords": [
+      "serialization",
+      "list",
+      "and",
+      "dictionary",
+      "dependencies",
+      "properly",
+      "tracked",
+      "tensorflow",
+      "backend",
+      "tracking",
+      "untracked",
+      "sublayers",
+      "weights",
+      "via",
+      "dict",
+      "containers",
+      "signature",
+      "saved_model",
+      "does",
+      "support"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras (tensorflow backend)",
+        "bug_no": 18398,
+        "title": "List and dictionary dependencies not properly tracked on tensorflow backend",
+        "url": "[https://github.com/keras-team/keras/issues/18398](https://github.com/keras-team/keras/issues/18398)"
+      },
+      {
+        "library": "tensorflow",
+        "bug_no": 45797,
+        "title": "saved_model does not support RaggedTensors",
+        "url": "https://github.com/tensorflow/tensorflow/issues/45797"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0014",
+    "scenario_type": "OTHER",
+    "cluster_size": 2,
+    "library_purity": 0.5,
+    "top_library": "keras",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:TAG_eager_mode",
+      "CFAM:ORID_attribute_error_missing_encoding_during_init",
+      "CFAM:PRE_keras3_regression_window",
+      "CFAM:PRE_mask_token_specified",
+      "CFAM:PRE_stringlookup_vocab_is_tensor",
+      "CFAM:TAG_api_constructor",
+      "CFAM:TAG_indexlookup",
+      "CFAM:TAG_preprocessing",
+      "CFAM:TAG_stringlookup",
+      "CFAM:TAG_tf_tensor_vocab",
+      "CFAM:TAG_version_regression",
+      "CFAM:TAG_vocabulary_init",
+      "CFAM:TRIG_layer_call_on_string_batch_with_oov_token_present",
+      "CFAM:TRIG_stringlookup_constructor_path_calls_set_vocabulary",
+      "CFAM:TRIG_stringlookup_init_with_tensor_vocab"
+    ],
+    "top_keywords": [
+      "keras",
+      "stringlookup",
+      "and",
+      "vocabulary",
+      "math",
+      "tan",
+      "cannot",
+      "accept",
+      "integer",
+      "variables",
+      "mode_mismatch"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 19770,
+        "title": "[BUG] keras.layers.StringLookup and Vocabulary of Tensors",
+        "url": "[https://github.com/keras-team/keras/issues/19770](https://github.com/keras-team/keras/issues/19770)"
+      },
+      {
+        "library": "TensorFlow",
+        "bug_no": 59611,
+        "title": "tf.math.tan cannot accept integer variables.",
+        "url": "https://github.com/tensorflow/tensorflow/issues/59611"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-DATA_PIPELINE-0015",
+    "scenario_type": "DATA_PIPELINE",
+    "cluster_size": 2,
+    "library_purity": 0.5,
+    "top_library": "keras",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:TAG_shape_inference",
+      "CFAM:ORID_exception_during_layer_build_or_model_build",
+      "CFAM:PRE_custom_layer_with_build_time_weight_creation",
+      "CFAM:PRE_tf_version_2_16_1_or_newer",
+      "CFAM:PRE_use_keras3_not_tf_keras",
+      "CFAM:TAG_add_weight",
+      "CFAM:TAG_custom_layer_build",
+      "CFAM:TAG_keras3",
+      "CFAM:TAG_symbolic_build",
+      "CFAM:TAG_tensorflow_2_16_plus",
+      "CFAM:TRIG_add_weight_name_passed_positionally_interpreted_as_shape",
+      "CFAM:TRIG_custom_layer_dim_depends_on_inferred_feature_axis",
+      "CFAM:TRIG_model_input_split_by_last_axis_slice_before_custom_layer",
+      "CFAM:ORID_graph_construction_or_runtime_shape_error",
+      "CFAM:PRE_graph_mode_queue_input_pipeline"
+    ],
+    "top_keywords": [
+      "input",
+      "build",
+      "uses",
+      "incorrect",
+      "and",
+      "keras3",
+      "configuration_error_surface_change_in_keras3_add_weight_signature_handling",
+      "resize_image_with_crop_or_pad",
+      "pipelines"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 20299,
+        "title": "Model build uses incorrect input shape, TF 2.16.1 and 2.17 with keras3",
+        "url": "[https://github.com/keras-team/keras/issues/20299](https://github.com/keras-team/keras/issues/20299)"
+      },
+      {
+        "library": "TensorFlow",
+        "bug_no": 521,
+        "title": "resize_image_with_crop_or_pad doesn't work with input pipelines",
+        "url": "https://github.com/tensorflow/tensorflow/issues/521"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0016",
+    "scenario_type": "OTHER",
+    "cluster_size": 2,
+    "library_purity": 1.0,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "crash",
+      "exception",
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:PRE_cpu_execution_path",
+      "CFAM:ORID_sampled_index_within_class_range",
+      "CFAM:PRE_tf1_graph_session_execution",
+      "CFAM:TAG_categorical",
+      "CFAM:TAG_cpu_kernel",
+      "CFAM:TAG_non_finite_input",
+      "CFAM:TAG_numerical_stability",
+      "CFAM:TAG_rng_sampling",
+      "CFAM:TAG_tf1_session",
+      "CFAM:TRIG_extreme_logits_overflow_underflow_in_multinomial",
+      "CFAM:TRIG_log_softmax_prenormalization_avoids_invalid_index",
+      "CFAM:TRIG_non_finite_logits_produce_out_of_range_index",
+      "CFAM:ORID_oracle_cpu_process_abort_fpe",
+      "CFAM:ORID_oracle_expected_validation_error_post_fix",
+      "CFAM:ORID_oracle_nonfinite_output_on_negative_poolsize"
+    ],
+    "top_keywords": [
+      "poor",
+      "numerics",
+      "multinomial",
+      "mode",
+      "implementation",
+      "numeric",
+      "instability",
+      "leading",
+      "invalid",
+      "sampled",
+      "index",
+      "out_of_range",
+      "sentinel",
+      "keras",
+      "maxpooling3d",
+      "crashes"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow",
+        "bug_no": 2774,
+        "title": "Poor numerics in CPU tf.multinomial",
+        "url": "https://github.com/tensorflow/tensorflow/issues/2774"
+      },
+      {
+        "library": "tensorflow",
+        "bug_no": 51936,
+        "title": "tf.keras.layers.MaxPooling3D crashes",
+        "url": "https://github.com/tensorflow/tensorflow/issues/51936"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-DTYPE_PRECISION-0017",
+    "scenario_type": "DTYPE_PRECISION",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "DeepSpeed",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_assertion_error_requires_dynamic_loss_scaling",
+      "CFAM:PRE_bf16_training_enabled",
+      "CFAM:PRE_deepspeed_engine_enabled",
+      "CFAM:PRE_fp16_disabled",
+      "CFAM:PRE_optimizer_lamb_selected",
+      "CFAM:TAG_assertion_failure",
+      "CFAM:TAG_bf16",
+      "CFAM:TAG_config_validation",
+      "CFAM:TAG_lamb",
+      "CFAM:TAG_mixed_precision",
+      "CFAM:TAG_optimizer",
+      "CFAM:TRIG_fp16_field_present_but_disabled_still_hits_check",
+      "CFAM:TRIG_lamb_with_bf16_no_loss_scale_assert"
+    ],
+    "top_keywords": [
+      "lamb",
+      "requires",
+      "dynamic",
+      "loss",
+      "scaling",
+      "config_validation_assert_blocks_bf16_lamb"
+    ],
+    "evidence_members": [
+      {
+        "library": "DeepSpeed",
+        "bug_no": 4417,
+        "title": "LAMB requires dynamic loss scaling",
+        "url": "https://github.com/deepspeedai/DeepSpeed/issues/4417"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-SERIALIZATION_CHECKPOINTING-0018",
+    "scenario_type": "SERIALIZATION_CHECKPOINTING",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "DeepSpeed",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_backward_raises_requires_grad_runtimeerror",
+      "CFAM:PRE_activation_checkpointing_enabled_interval_gt_zero",
+      "CFAM:PRE_deepspeed_pipeline_engine_in_use",
+      "CFAM:TAG_activation_checkpointing",
+      "CFAM:TAG_autodiff",
+      "CFAM:TAG_embedding_layer",
+      "CFAM:TAG_gradient_flow",
+      "CFAM:TAG_logits_layout_transpose",
+      "CFAM:TAG_loss_layer",
+      "CFAM:TAG_module_naming_heuristic",
+      "CFAM:TAG_pipeline_parallelism",
+      "CFAM:TRIG_checkpoint_interval_gt_zero_triggers_grad_fn_missing",
+      "CFAM:TRIG_checkpoint_selection_includes_embedding_or_loss_layer",
+      "CFAM:TRIG_custom_pipeline_module_class_name_bypasses_checkpointable_filter",
+      "CFAM:TRIG_layerspec_pipeline_variant_breaks_requires_grad_workaround"
+    ],
+    "top_keywords": [
+      "does",
+      "runtimeerror",
+      "element",
+      "require",
+      "grad",
+      "and",
+      "have",
+      "grad_fn",
+      "pipeline_checkpointing_breaks_grad_flow"
+    ],
+    "evidence_members": [
+      {
+        "library": "DeepSpeed",
+        "bug_no": 4274,
+        "title": "[BUG] RuntimeError: element 0 of tensors does not require grad and does not have a grad_fn",
+        "url": "https://github.com/deepspeedai/DeepSpeed/issues/4274"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0019",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_runtime_assertion_failure_on_output",
+      "CFAM:PRE_conv2d_transpose_in_subgraph",
+      "CFAM:PRE_gpu_cuda_execution",
+      "CFAM:PRE_tensorrt_backend_enabled",
+      "CFAM:TAG_codegen",
+      "CFAM:TAG_contrib_tensorrt",
+      "CFAM:TAG_cuda",
+      "CFAM:TAG_layout_transform",
+      "CFAM:TAG_relay",
+      "CFAM:TAG_tensorrt",
+      "CFAM:TRIG_conv2d_transpose_tensorrt_run_mismatch",
+      "CFAM:TRIG_layout_transform_path_for_tensorrt_offload",
+      "CFAM:TRIG_nontrivial_output_channels_triggers_failure",
+      "CFAM:TRIG_weight_layout_default_incorrect_for_tensorrt_conv2d_transpose"
+    ],
+    "top_keywords": [
+      "test_tensorrt",
+      "test_conv2d_transpose",
+      "failed",
+      "output_mismatch"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 9653,
+        "title": "[Bug] test_tensorrt.py::test_conv2d_transpose failed",
+        "url": "https://github.com/apache/tvm/issues/9653"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0020",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_relay_dtype_should_be_float",
+      "CFAM:PRE_divide_default_mode",
+      "CFAM:PRE_tvm_relay_pytorch_frontend_import",
+      "CFAM:TAG_aten_divide",
+      "CFAM:TAG_dtype_promotion",
+      "CFAM:TAG_frontend_pytorch",
+      "CFAM:TAG_integer_true_division",
+      "CFAM:TAG_relay",
+      "CFAM:TAG_scalar_tensor_arithmetic",
+      "CFAM:TRIG_aten_divide_int_int_promotion_required",
+      "CFAM:TRIG_int64_tensor_div_int64_scalar_path"
+    ],
+    "top_keywords": [
+      "pytorch",
+      "torch",
+      "divide",
+      "default",
+      "behaviour",
+      "obeyed",
+      "output_mismatch"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 10720,
+        "title": "[Bug][Pytorch] Torch divide default behaviour not obeyed",
+        "url": "https://github.com/apache/tvm/issues/10720"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0021",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_opt_level_output_inconsistency_nan_propagation",
+      "CFAM:PRE_float32_tanh_path",
+      "CFAM:PRE_pass_context_opt_level_4",
+      "CFAM:PRE_relay_build_with_llvm_target",
+      "CFAM:TAG_fast_math",
+      "CFAM:TAG_float32",
+      "CFAM:TAG_graph_executor",
+      "CFAM:TAG_llvm_target",
+      "CFAM:TAG_nan_propagation",
+      "CFAM:TAG_opt_level_4",
+      "CFAM:TAG_relay",
+      "CFAM:TAG_topi",
+      "CFAM:TRIG_clamp_minmax_order_can_clamp_nan_to_bound",
+      "CFAM:TRIG_fast_math_rewrites_tanh_to_fast_tanh_at_opt4",
+      "CFAM:TRIG_tanh_nan_input_opt4_vs_opt0_3_mismatch"
+    ],
+    "top_keywords": [
+      "tanh",
+      "outputs",
+      "for",
+      "nan",
+      "input",
+      "optimization",
+      "level",
+      "output_mismatch"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 11696,
+        "title": "[Bug] `tanh` outputs `1.` for `nan` input at optimization level 4",
+        "url": "https://github.com/apache/tvm/issues/11696"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0022",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_setuppy_install_copy_error_on_directory",
+      "CFAM:PRE_include_libs_paths_include_dir_entry",
+      "CFAM:PRE_install_from_source_setuppy_install",
+      "CFAM:TAG_data_files",
+      "CFAM:TAG_from_source_install",
+      "CFAM:TAG_linux_x86_64",
+      "CFAM:TAG_packaging",
+      "CFAM:TAG_path_handling",
+      "CFAM:TAG_python_setup",
+      "CFAM:TRIG_data_files_contains_directory_path"
+    ],
+    "top_keywords": [
+      "during",
+      "package",
+      "installation",
+      "installation_failure"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 11726,
+        "title": "Error during Python Package Installation",
+        "url": "https://github.com/apache/tvm/issues/11726"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TVM_RELAY_CODEGEN-0023",
+    "scenario_type": "TVM_RELAY_CODEGEN",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_default_option_propagation_missing",
+      "CFAM:PRE_custom_hybrid_target_with_attrs_defaults",
+      "CFAM:PRE_tvmc_frontend_drives_partition_for_target",
+      "CFAM:TAG_attrs_default",
+      "CFAM:TAG_codegen_config",
+      "CFAM:TAG_contrib_codegen",
+      "CFAM:TAG_hybrid_target",
+      "CFAM:TAG_partition_for_target",
+      "CFAM:TAG_relay",
+      "CFAM:TAG_tvmc",
+      "CFAM:TRIG_attrsnode_field_default_set_default",
+      "CFAM:TRIG_default_value_not_visible_at_frontend",
+      "CFAM:TRIG_partition_for_target_reads_config",
+      "CFAM:TRIG_tvmc_omits_option_flag"
+    ],
+    "top_keywords": [
+      "default",
+      "option",
+      "passed",
+      "tvmc",
+      "front",
+      "end",
+      "option_default_not_propagated"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 13264,
+        "title": "[Bug] Default option is not passed by TVMC Front end",
+        "url": "https://github.com/apache/tvm/issues/13264"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0024",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "apache-tvm",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_setuptools_crash_during_reqgen",
+      "CFAM:PRE_latest_setuptools_present",
+      "CFAM:PRE_run_make_cython",
+      "CFAM:TAG_build_time",
+      "CFAM:TAG_cython",
+      "CFAM:TAG_dependency_spec",
+      "CFAM:TAG_python_packaging",
+      "CFAM:TRIG_invalid_numpy_version_spec_wildcard"
+    ],
+    "top_keywords": [
+      "fix",
+      "gen_requirements",
+      "latest",
+      "setup",
+      "tools",
+      "build_failure"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache-tvm",
+        "bug_no": 13911,
+        "title": "[Bug & fix] gen_requirements issue with latest setup tools",
+        "url": "https://github.com/apache/tvm/issues/13911"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0025",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_compile_fail_missing_llvm_adt_triple_h",
+      "CFAM:PRE_llvm_backend_enabled_use_llvm",
+      "CFAM:PRE_llvm_version_new_layout",
+      "CFAM:PRE_os_ubuntu_20_04",
+      "CFAM:PRE_tvm_build_from_source",
+      "CFAM:TAG_build_failure",
+      "CFAM:TAG_header_include_path",
+      "CFAM:TAG_linux_ubuntu_20_04",
+      "CFAM:TAG_llvm_17",
+      "CFAM:TAG_llvm_backend",
+      "CFAM:TAG_llvm_main_branch",
+      "CFAM:TRIG_llvm_triple_header_moved_targetparser"
+    ],
+    "top_keywords": [
+      "fatal",
+      "llvm",
+      "adt",
+      "triple",
+      "such",
+      "file",
+      "directory",
+      "build_failure"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 14136,
+        "title": "[Bug] fatal error: llvm/ADT/Triple.h: No such file or directory",
+        "url": "https://github.com/apache/tvm/issues/14136"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TVM_RELAY_CODEGEN-0026",
+    "scenario_type": "TVM_RELAY_CODEGEN",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_torch_tvm_output_mismatch_threshold",
+      "CFAM:PRE_cpu_llvm_graph_executor",
+      "CFAM:PRE_jit_trace_module",
+      "CFAM:PRE_pytorch_frontend_relay_import",
+      "CFAM:TAG_differential_testing",
+      "CFAM:TAG_from_pytorch",
+      "CFAM:TAG_frontend_pytorch",
+      "CFAM:TAG_graph_executor",
+      "CFAM:TAG_llvm_cpu",
+      "CFAM:TAG_operator_semantics",
+      "CFAM:TAG_relay",
+      "CFAM:TAG_torch_jit_trace",
+      "CFAM:TRIG_diff_test_torch_vs_tvm_execution",
+      "CFAM:TRIG_float32_tensor_input",
+      "CFAM:TRIG_threshold_module_converted_from_pytorch"
+    ],
+    "top_keywords": [
+      "relay",
+      "pytorch",
+      "wrong",
+      "implementation",
+      "logic",
+      "threshold",
+      "operator",
+      "output_mismatch"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 14805,
+        "title": "[Bug][relay][pytorch] Wrong implementation logic in Threshold operator",
+        "url": "https://github.com/apache/tvm/issues/14805"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0027",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "logging_based"
+    ],
+    "top_families": [
+      "CFAM:ORID_dataflow_purity_violation_oracle",
+      "CFAM:PRE_param_transform_requires_stateful_packedfunc",
+      "CFAM:PRE_pass_lazy_transform_params_applied",
+      "CFAM:PRE_unity_branch_relax_pipeline",
+      "CFAM:TAG_dataflow_block",
+      "CFAM:TAG_ir_transform_pass",
+      "CFAM:TAG_liveness_analysis",
+      "CFAM:TAG_packedfunc_side_effect",
+      "CFAM:TAG_pass_ordering",
+      "CFAM:TAG_tvm_relax",
+      "CFAM:TAG_unity_branch",
+      "CFAM:TRIG_impure_packedfunc_call_inside_dataflow_block",
+      "CFAM:TRIG_stateful_item_set_get_pattern_in_transformed_ir",
+      "CFAM:TRIG_to_non_dataflow_pass_incompatible_with_liveness_analysis"
+    ],
+    "top_keywords": [
+      "unity",
+      "lazytransformparams",
+      "introduces",
+      "impure",
+      "actions",
+      "inside",
+      "dataflowblock",
+      "mode_mismatch"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 14829,
+        "title": "[Bug][Unity] `LazyTransformParams` introduces impure actions inside `DataflowBlock`s",
+        "url": "https://github.com/apache/tvm/issues/14829"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TVM_RELAY_CODEGEN-0028",
+    "scenario_type": "TVM_RELAY_CODEGEN",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "Apache TVM",
+    "oracle_types": [
+      "logging_based"
+    ],
+    "top_families": [
+      "CFAM:ORID_lowered_tir_structural_regression",
+      "CFAM:PRE_post_pr_14021",
+      "CFAM:PRE_symbolic_shape_tir",
+      "CFAM:TAG_dynamic_shapes",
+      "CFAM:TAG_lowering",
+      "CFAM:TAG_schedule",
+      "CFAM:TAG_symbolic_dim",
+      "CFAM:TAG_tir",
+      "CFAM:TRIG_dynamic_shape_schedule_impact",
+      "CFAM:TRIG_symbolic_buffer_shape_lowering"
+    ],
+    "top_keywords": [
+      "wrong",
+      "lowered",
+      "tir",
+      "symbolic",
+      "input",
+      "buffer",
+      "lowering_regression"
+    ],
+    "evidence_members": [
+      {
+        "library": "Apache TVM",
+        "bug_no": 14834,
+        "title": "[Bug] Wrong lowered TIR with symbolic input buffer",
+        "url": "https://github.com/apache/tvm/issues/14834"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TVM_RELAY_CODEGEN-0029",
+    "scenario_type": "TVM_RELAY_CODEGEN",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_tvmerror_reshape_incompatible_shape_sum",
+      "CFAM:PRE_cpu_llvm_vm_executor",
+      "CFAM:PRE_keras_frontend_from_keras_path",
+      "CFAM:PRE_passcontext_opt_level_3",
+      "CFAM:PRE_static_input_shape_3d_float32",
+      "CFAM:TAG_frontend_keras",
+      "CFAM:TAG_gru",
+      "CFAM:TAG_llvm_target",
+      "CFAM:TAG_relay",
+      "CFAM:TAG_reshape",
+      "CFAM:TAG_rnn",
+      "CFAM:TAG_simplernn",
+      "CFAM:TAG_type_inference",
+      "CFAM:TAG_vm_executor",
+      "CFAM:TRIG_keras_gru_import_can_trigger_same_crash"
+    ],
+    "top_keywords": [
+      "relay",
+      "checking",
+      "simplernn",
+      "keras",
+      "frontend"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 14868,
+        "title": "[Bug][Relay] crash at shape checking in SimpleRNN at Keras frontend",
+        "url": "https://github.com/apache/tvm/issues/14868"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TVM_RELAY_CODEGEN-0030",
+    "scenario_type": "TVM_RELAY_CODEGEN",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_oracle_compilation_exception_undeclared_identifier",
+      "CFAM:PRE_clang_8_toolchain",
+      "CFAM:PRE_tvm_source_at_specific_commit",
+      "CFAM:TAG_build_from_source",
+      "CFAM:TAG_clang",
+      "CFAM:TAG_compiler_frontend",
+      "CFAM:TAG_regression",
+      "CFAM:TRIG_clang_build_compile_error_undeclared_identifier_f"
+    ],
+    "top_keywords": [
+      "build",
+      "the",
+      "tvm",
+      "source",
+      "code",
+      "and",
+      "threw",
+      "use",
+      "undeclared",
+      "identifier",
+      "build_failure"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 14878,
+        "title": "[Bug] [Build Failure] build the tvm source code crash and threw \"use of undeclared identifier 'f'\"",
+        "url": "https://github.com/apache/tvm/issues/14878"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TVM_RELAY_CODEGEN-0031",
+    "scenario_type": "TVM_RELAY_CODEGEN",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_value_error_block_no_longer_exists",
+      "CFAM:PRE_cuda_target_sm80",
+      "CFAM:PRE_tensor_core_schedule_rule_enabled",
+      "CFAM:PRE_tvm_unity_latest",
+      "CFAM:PRE_ubuntu_20_04",
+      "CFAM:TAG_bias_add",
+      "CFAM:TAG_conv2d",
+      "CFAM:TAG_cuda",
+      "CFAM:TAG_float16",
+      "CFAM:TAG_meta_schedule",
+      "CFAM:TAG_relay",
+      "CFAM:TAG_sm80",
+      "CFAM:TAG_tensor_core",
+      "CFAM:TAG_tir_schedule",
+      "CFAM:TAG_wmma_padding"
+    ],
+    "top_keywords": [
+      "the",
+      "relay",
+      "metaschedule",
+      "valueerror",
+      "block",
+      "longer",
+      "exists",
+      "irmodule"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 15505,
+        "title": "[Bug] [Relay] [MetaSchedule] ValueError: The block no longer exists in the IRModule",
+        "url": "https://github.com/apache/tvm/issues/15505"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TVM_RELAY_CODEGEN-0032",
+    "scenario_type": "TVM_RELAY_CODEGEN",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_class_label_mismatch_on_known_input",
+      "CFAM:PRE_corstone300_memory_model_npu_no_dtcm_access",
+      "CFAM:PRE_linker_script_lacks_output_section_placement",
+      "CFAM:PRE_microtvm_ethosu_fvp_demo_pipeline",
+      "CFAM:TAG_corstone300",
+      "CFAM:TAG_ethosu",
+      "CFAM:TAG_fvp",
+      "CFAM:TAG_linker_script",
+      "CFAM:TAG_memory_mapping",
+      "CFAM:TAG_microtvm",
+      "CFAM:TAG_npu_output_buffer",
+      "CFAM:TRIG_ethosu_demo_label_driven_oracle",
+      "CFAM:TRIG_missing_linker_section_for_output_data_sec",
+      "CFAM:TRIG_output_buffer_in_npu_inaccessible_dtcm"
+    ],
+    "top_keywords": [
+      "ethos",
+      "apps",
+      "microtvm",
+      "ethosu",
+      "run_demo",
+      "gets",
+      "wrong",
+      "inference",
+      "result",
+      "output_mismatch"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 15643,
+        "title": "[Bug] [Ethos] apps/microtvm/ethosu/run_demo.sh gets wrong inference result",
+        "url": "https://github.com/apache/tvm/issues/15643"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0033",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_cxx_compile_fails_abstract_dpimodule",
+      "CFAM:PRE_building_vta_dpi_runtime",
+      "CFAM:PRE_tvm_commit_at_a156181e",
+      "CFAM:PRE_vta_enabled_fsim_or_tsim",
+      "CFAM:TAG_build_failure",
+      "CFAM:TAG_cxx_virtual_override",
+      "CFAM:TAG_runtime_module",
+      "CFAM:TAG_use_vta_fsim",
+      "CFAM:TAG_use_vta_tsim",
+      "CFAM:TAG_vta",
+      "CFAM:TRIG_abstract_class_instantiation_in_dpi_module",
+      "CFAM:TRIG_vta_dpi_getfunction_name_type_mismatch"
+    ],
+    "top_keywords": [
+      "vta",
+      "type",
+      "dpi",
+      "dpimodule",
+      "getfunction",
+      "parameters",
+      "compile_error"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 16853,
+        "title": "[Bug] [VTA] A type error of vta::dpi::DPIModule::GetFunction' parameters",
+        "url": "https://github.com/apache/tvm/issues/16853"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TVM_RELAY_CODEGEN-0034",
+    "scenario_type": "TVM_RELAY_CODEGEN",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "apache-tvm",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_cxx_build_fatal_missing_header_or_undeclared_type",
+      "CFAM:PRE_build_contrib_pytorch_custom_class_enabled",
+      "CFAM:PRE_compile_cxx_contrib_torch_files",
+      "CFAM:TAG_api_namespace_change",
+      "CFAM:TAG_build_from_source",
+      "CFAM:TAG_cmake",
+      "CFAM:TAG_contrib_pytorch",
+      "CFAM:TAG_cxx_compile_error",
+      "CFAM:TAG_header_include_path",
+      "CFAM:TRIG_allocator_type_namespace_moved_vm_to_memory",
+      "CFAM:TRIG_missing_tvm_support_namespace_qualifiers",
+      "CFAM:TRIG_relative_include_path_base64_header_too_shallow"
+    ],
+    "top_keywords": [
+      "tvm",
+      "src",
+      "contrib",
+      "torch",
+      "tvm_module_wrapper",
+      "runtimemodulewrappertvm",
+      "fatal",
+      "support",
+      "base64",
+      "such",
+      "file",
+      "directory",
+      "build_failure"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache-tvm",
+        "bug_no": 17164,
+        "title": "[Bug] tvm/src/contrib/torch/tvm_module_wrapper/RuntimeModuleWrapperTVM.cc:32:10: fatal error: ../../support/base64.h: No such file or directory",
+        "url": "https://github.com/apache/tvm/issues/17164"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TVM_RELAY_CODEGEN-0035",
+    "scenario_type": "TVM_RELAY_CODEGEN",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "logging_based"
+    ],
+    "top_families": [
+      "CFAM:ORID_lsan_reports_leak_on_exit",
+      "CFAM:PRE_cpp_frontend_irmodule_from_text",
+      "CFAM:PRE_leak_detector_required",
+      "CFAM:PRE_relay_enabled",
+      "CFAM:PRE_tvm_version_0_19_0",
+      "CFAM:TAG_cpp_api",
+      "CFAM:TAG_ir_module_from_text",
+      "CFAM:TAG_lsan",
+      "CFAM:TAG_memory_leak",
+      "CFAM:TAG_relay",
+      "CFAM:TAG_transform_pass",
+      "CFAM:TRIG_relay_graph_has_trivial_arithmetic_fusion_pattern",
+      "CFAM:TRIG_simplifyexpr_on_relay_irmodule",
+      "CFAM:TRIG_single_pass_run_no_output_consumption"
+    ],
+    "top_keywords": [
+      "multiple",
+      "memory",
+      "leaks",
+      "being",
+      "caused",
+      "tvm",
+      "relay",
+      "transform",
+      "simplifyexpr",
+      "memory_leak"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 17740,
+        "title": "[Bug] Multiple memory leaks being caused by tvm::relay::transform::SimplifyExpr()",
+        "url": "https://github.com/apache/tvm/issues/17740"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0036",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "apache_tvm",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_python_name_error_undefined_i",
+      "CFAM:PRE_opencl_scheduled_kernel_thread_binding",
+      "CFAM:PRE_tvm_main_branch_tutorial_run_opencl",
+      "CFAM:TAG_docs_tutorial_code",
+      "CFAM:TAG_gpu_schedule_binding",
+      "CFAM:TAG_opencl",
+      "CFAM:TAG_rpc_cross_compilation_tutorial",
+      "CFAM:TAG_schedule_primitives_get_loops_split_bind",
+      "CFAM:TAG_tvmscript_schedule",
+      "CFAM:TRIG_duplicate_bind_same_loop_to_block_and_thread",
+      "CFAM:TRIG_undefined_loop_var_in_sch_split"
+    ],
+    "top_keywords": [
+      "cross_compilation_and_rpc",
+      "tutorial",
+      "incorrect",
+      "variable",
+      "used",
+      "sch",
+      "split"
+    ],
+    "evidence_members": [
+      {
+        "library": "apache_tvm",
+        "bug_no": 17742,
+        "title": "[Bug] Error in cross_compilation_and_rpc.py tutorial: incorrect variable used in sch.split",
+        "url": "https://github.com/apache/tvm/issues/17742"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TRACING_GRAPH_FUNCTION-0037",
+    "scenario_type": "TRACING_GRAPH_FUNCTION",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "KERAS",
+    "oracle_types": [
+      "logging_based"
+    ],
+    "top_families": [
+      "CFAM:ORID_funcgraph_creation_log_missing",
+      "CFAM:PRE_absl_log_capture_enabled",
+      "CFAM:PRE_tf2_keras_mode_skip_eager_and_v1",
+      "CFAM:TAG_data_adapter",
+      "CFAM:TAG_engine",
+      "CFAM:TAG_function_tracing",
+      "CFAM:TAG_log_capture",
+      "CFAM:TAG_model_evaluate",
+      "CFAM:TAG_model_fit",
+      "CFAM:TRIG_data_adapter_list_input_normalization"
+    ],
+    "top_keywords": [
+      "test",
+      "cases",
+      "failed",
+      "for",
+      "training_test",
+      "culprit",
+      "testfunctiontracing",
+      "class",
+      "logging_based",
+      "tracing",
+      "expectation",
+      "regression",
+      "test_harness",
+      "sensitive"
+    ],
+    "evidence_members": [
+      {
+        "library": "KERAS",
+        "bug_no": 15248,
+        "title": "Test cases failed for training_test, culprit is TestFunctionTracing class",
+        "url": "https://github.com/keras-team/keras/issues/15248"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-DTYPE_PRECISION-0038",
+    "scenario_type": "DTYPE_PRECISION",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "mode_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_noncommutative_dtype_spec_oracle",
+      "CFAM:ORID_symbolic_vs_runtime_dtype_oracle",
+      "CFAM:PRE_graph_build_then_execute",
+      "CFAM:PRE_mixed_float32_float64",
+      "CFAM:PRE_symbolic_inputs_keras_input",
+      "CFAM:TAG_backend_consistency",
+      "CFAM:TAG_binary_op",
+      "CFAM:TAG_dtype_casting",
+      "CFAM:TAG_jax_toggle_float64",
+      "CFAM:TAG_model_graph",
+      "CFAM:TAG_symbolic",
+      "CFAM:TRIG_jax_float64_toggle_affects_observed_dtype",
+      "CFAM:TRIG_multi_input_op_output_spec_missing_shared_resolve_dtype",
+      "CFAM:TRIG_symbolic_add_order_dependent_dtype",
+      "CFAM:TRIG_symbolic_spec_dtype_inconsistent_with_runtime_backend"
+    ],
+    "top_keywords": [
+      "symbolic",
+      "addition",
+      "commutative",
+      "dtypes",
+      "mode_mismatch"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 18415,
+        "title": "Symbolic tensor addition is not commutative w.r.t. dtypes",
+        "url": "[https://github.com/keras-team/keras/issues/18415](https://github.com/keras-team/keras/issues/18415)"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0039",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_device_mismatch_exception_meta_vs_cuda",
+      "CFAM:PRE_cuda_device_available",
+      "CFAM:PRE_model_fit_executes_metric",
+      "CFAM:PRE_torch_backend_enabled",
+      "CFAM:TAG_backend_torch",
+      "CFAM:TAG_device_placement",
+      "CFAM:TAG_gpu_cuda",
+      "CFAM:TAG_metric_mean_iou",
+      "CFAM:TAG_training_fit_path",
+      "CFAM:TRIG_error_raised_during_model_fit_metric_computation",
+      "CFAM:TRIG_mean_iou_with_torch_backend_device_placement_mismatch"
+    ],
+    "top_keywords": [
+      "while",
+      "using",
+      "meaniou",
+      "torch",
+      "backend",
+      "device_mismatch_error"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 18440,
+        "title": "Error while using `MeanIoU` with `torch` backend ",
+        "url": "[https://github.com/keras-team/keras/issues/18440](https://github.com/keras-team/keras/issues/18440)"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-SERIALIZATION_CHECKPOINTING-0040",
+    "scenario_type": "SERIALIZATION_CHECKPOINTING",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "serialization_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_unbuilt_layer_variables_listed_in_artifact",
+      "CFAM:PRE_keras3_strict_state_creation",
+      "CFAM:PRE_model_state_not_fully_built_before_load",
+      "CFAM:PRE_subclassed_model_with_child_layers",
+      "CFAM:TAG_build_lifecycle",
+      "CFAM:TAG_keras_v3",
+      "CFAM:TAG_serialization_keras_format",
+      "CFAM:TAG_state_creation",
+      "CFAM:TAG_subclassed_model",
+      "CFAM:TAG_tf_keras_migration",
+      "CFAM:TAG_weights_loading",
+      "CFAM:TRIG_conditional_skip_leaves_some_layers_uncalled",
+      "CFAM:TRIG_eager_call_builds_state_but_build_api_may_not",
+      "CFAM:TRIG_manual_build_marks_built_with_unbuilt_state",
+      "CFAM:TRIG_parent_build_instantiates_child_layers_without_building_them"
+    ],
+    "top_keywords": [
+      "was",
+      "never",
+      "built",
+      "but",
+      "weights",
+      "file",
+      "lists",
+      "have",
+      "variables",
+      "serialization",
+      "build_state_inconsistency"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 18823,
+        "title": "layer was never built but weights file lists have variables",
+        "url": "[https://github.com/keras-team/keras/issues/18823](https://github.com/keras-team/keras/issues/18823)"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0041",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_unrecognized_kwarg_valueerror_on_layer_init",
+      "CFAM:PRE_keras3_api_removed_bn_flags",
+      "CFAM:PRE_torch_backend_selected",
+      "CFAM:TAG_backend_torch",
+      "CFAM:TAG_cnn_conv2d_block",
+      "CFAM:TAG_cross_backend_behavior",
+      "CFAM:TAG_kwarg_validation",
+      "CFAM:TAG_layer_batchnormalization",
+      "CFAM:TAG_model_load_state_dict",
+      "CFAM:TRIG_batchnorm_renorm_kwarg_rejected_torch_backend",
+      "CFAM:TRIG_conv2d_block_uses_renormed_batchnorm"
+    ],
+    "top_keywords": [
+      "renormalization",
+      "module",
+      "batchnormalization",
+      "torch",
+      "backend",
+      "implemented",
+      "unsupported_argument_backend_gap"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 19063,
+        "title": "Renormalization module of BatchNormalization in torch backend is not implemented.",
+        "url": "[https://github.com/keras-team/keras/issues/19063](https://github.com/keras-team/keras/issues/19063)"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0042",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_nonfinite_output_detection",
+      "CFAM:PRE_keras_cv_stable_diffusion_text_encoder_path",
+      "CFAM:PRE_keras_version_3_0_2_regression_window",
+      "CFAM:TAG_keras",
+      "CFAM:TAG_keras_cv",
+      "CFAM:TAG_nan",
+      "CFAM:TAG_predict_on_batch",
+      "CFAM:TAG_regression",
+      "CFAM:TAG_stable_diffusion",
+      "CFAM:TAG_text_encoder",
+      "CFAM:TRIG_text_encoder_predict_on_batch_returns_nans",
+      "CFAM:TRIG_version_differential_check_older_keras_ok"
+    ],
+    "top_keywords": [
+      "keras",
+      "stable",
+      "diffusion",
+      "broken",
+      "since",
+      "fine",
+      "older",
+      "versions",
+      "numeric_nan_regression"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 19045,
+        "title": "Stable diffusion is broken since Keras 3.0.2. Works fine with older versions of keras.",
+        "url": "[https://github.com/keras-team/keras/issues/19045](https://github.com/keras-team/keras/issues/19045)"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TRAINING_FIT_EVALUATE-0043",
+    "scenario_type": "TRAINING_FIT_EVALUATE",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "exception",
+      "mode_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_differential_loss_specification_oracle",
+      "CFAM:ORID_operator_not_allowed_in_graph_error_on_fit",
+      "CFAM:PRE_keras_version_3_0_5",
+      "CFAM:PRE_loss_passed_as_classname_string",
+      "CFAM:PRE_simple_dense_regression_model",
+      "CFAM:TAG_api_compatibility_regression",
+      "CFAM:TAG_graph_mode_error",
+      "CFAM:TAG_loss_resolution",
+      "CFAM:TAG_model_compile",
+      "CFAM:TAG_string_identifier",
+      "CFAM:TRIG_fit_triggers_graph_bool_eval_error",
+      "CFAM:TRIG_loss_classname_string_in_compile",
+      "CFAM:TRIG_loss_object_works_when_instantiated"
+    ],
+    "top_keywords": [
+      "loss",
+      "keras",
+      "classes",
+      "strings",
+      "interpreted",
+      "incorrectly",
+      "string",
+      "identifier",
+      "mis_parsed",
+      "class",
+      "callable",
+      "leading",
+      "graph_mode",
+      "boolean",
+      "evaluation",
+      "during"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 19333,
+        "title": "keras 3.0.5 - Loss \"classes\" as strings interpreted incorrectly",
+        "url": "[https://github.com/keras-team/keras/issues/19333](https://github.com/keras-team/keras/issues/19333)"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0044",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "nondeterminism"
+    ],
+    "top_families": [
+      "CFAM:ORID_repeated_init_same_seed_zero_produces_different_values",
+      "CFAM:PRE_explicit_seed_zero",
+      "CFAM:PRE_keras_random_initializer_class",
+      "CFAM:TAG_determinism",
+      "CFAM:TAG_initializer",
+      "CFAM:TAG_random_initializers_py",
+      "CFAM:TAG_rng",
+      "CFAM:TAG_seed_handling",
+      "CFAM:TRIG_affects_multiple_random_initializers",
+      "CFAM:TRIG_randomnormal_seed_boolean_guard",
+      "CFAM:TRIG_seed_zero_treated_as_falsy_ignores_seed"
+    ],
+    "top_keywords": [
+      "seed",
+      "initializing",
+      "classes",
+      "inside",
+      "random_initializers",
+      "ignores",
+      "the",
+      "nondeterminism"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 19361,
+        "title": "Initializing classes inside random_initializers.py with a seed value of 0 ignores the seed",
+        "url": "[https://github.com/keras-team/keras/issues/19361](https://github.com/keras-team/keras/issues/19361)"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0045",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "logging_based"
+    ],
+    "top_families": [
+      "CFAM:ORID_summary_param_accounting_mismatch",
+      "CFAM:PRE_keras_version_3_0_5",
+      "CFAM:PRE_model_contains_embedding_trainable_false",
+      "CFAM:PRE_summary_api_used",
+      "CFAM:TAG_embedding_layer",
+      "CFAM:TAG_model_summary",
+      "CFAM:TAG_nlp_example",
+      "CFAM:TAG_parameter_counting",
+      "CFAM:TAG_trainable_flag",
+      "CFAM:TRIG_embedding_trainable_false_still_counted_trainable_in_summary",
+      "CFAM:TRIG_summary_show_trainable_true_missing_non_trainable_count"
+    ],
+    "top_keywords": [
+      "trainable",
+      "creating",
+      "fixed",
+      "embedding",
+      "false",
+      "still",
+      "shows",
+      "having",
+      "params",
+      "the",
+      "summary",
+      "reporting_mismatch"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 19398,
+        "title": "Creating a fixed embedding layer (with \"trainable=False\") still shows up as having trainable params in the model's summary",
+        "url": "[https://github.com/keras-team/keras/issues/19398](https://github.com/keras-team/keras/issues/19398)"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0046",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "logging_based"
+    ],
+    "top_families": [
+      "CFAM:ORID_source_artifact_mismatch_oracle",
+      "CFAM:PRE_keras_version_3_2_1_context",
+      "CFAM:TAG_backend_clear_session",
+      "CFAM:TAG_release_packaging",
+      "CFAM:TAG_source_distribution",
+      "CFAM:TAG_version_tag_mismatch",
+      "CFAM:TRIG_clear_session_gc_collect_present_in_one_tree",
+      "CFAM:TRIG_clear_session_tensorflow_import_path_diff",
+      "CFAM:TRIG_pypi_vs_tag_source_tree_layout_mismatch"
+    ],
+    "top_keywords": [
+      "between",
+      "pypi",
+      "and",
+      "there",
+      "seem",
+      "some",
+      "differences",
+      "the",
+      "source",
+      "code",
+      "that",
+      "tagged",
+      "github",
+      "packaging",
+      "release",
+      "artifact",
+      "mismatch",
+      "sdist",
+      "git",
+      "tag"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 19587,
+        "title": "There seem some differences between the source code from PyPI and that tagged with v3.2.1 in GitHub.",
+        "url": "[https://github.com/keras-team/keras/issues/19587](https://github.com/keras-team/keras/issues/19587)"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TRAINING_FIT_EVALUATE-0047",
+    "scenario_type": "TRAINING_FIT_EVALUATE",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_numeric_vector_expectation_on_reference_example",
+      "CFAM:ORID_output_shape_mode_mismatch_vector_vs_scalar",
+      "CFAM:PRE_rank4_mask_like_tensors",
+      "CFAM:PRE_tf_version_2_16_1_reported",
+      "CFAM:TAG_api_behavior",
+      "CFAM:TAG_batch_reduction",
+      "CFAM:TAG_loss",
+      "CFAM:TAG_reduction_axis",
+      "CFAM:TAG_segmentation",
+      "CFAM:TAG_shape_sensitive",
+      "CFAM:TRIG_batch_axis_should_be_preserved_for_per_sample_loss",
+      "CFAM:TRIG_dice_loss_reduces_all_axes_to_scalar",
+      "CFAM:TRIG_missing_axis_parameter_for_dice_reduction"
+    ],
+    "top_keywords": [
+      "dice",
+      "loss",
+      "incorrect",
+      "output_mismatch"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 19637,
+        "title": "Dice loss - incorrect",
+        "url": "[https://github.com/keras-team/keras/issues/19637](https://github.com/keras-team/keras/issues/19637)"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0048",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_invalid_argument_shape_mismatch_on_call",
+      "CFAM:PRE_axis_list_includes_non_channel_spatial_dims",
+      "CFAM:PRE_keras_layer_normalization_rms_scaling_enabled",
+      "CFAM:PRE_rank_4_nhwc_input",
+      "CFAM:TAG_axis_list",
+      "CFAM:TAG_broadcasting",
+      "CFAM:TAG_cpu",
+      "CFAM:TAG_image_tensor_nhwc",
+      "CFAM:TAG_layer_normalization",
+      "CFAM:TAG_rms_scaling",
+      "CFAM:TRIG_call_path_layer_normalization_call_mul_op",
+      "CFAM:TRIG_large_spatial_dims_expose_shape_incompatibility",
+      "CFAM:TRIG_rms_scaling_with_multiple_axes_misbroadcast_gamma"
+    ],
+    "top_keywords": [
+      "layernorm",
+      "supporting",
+      "axis"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 19642,
+        "title": "Layernorm not supporting axis [-2, 3]",
+        "url": "[https://github.com/keras-team/keras/issues/19642](https://github.com/keras-team/keras/issues/19642)"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0049",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_division_by_zero_exception",
+      "CFAM:PRE_backend_is_jax",
+      "CFAM:PRE_layer_is_preprocessing_resizing",
+      "CFAM:TAG_backend_jax",
+      "CFAM:TAG_crop_to_aspect_ratio",
+      "CFAM:TAG_division_by_zero",
+      "CFAM:TAG_image_resize",
+      "CFAM:TAG_preprocessing_layer",
+      "CFAM:TRIG_resizing_crop_to_aspect_ratio_true",
+      "CFAM:TRIG_resizing_large_height_parameter",
+      "CFAM:TRIG_resizing_produces_zero_dimension_for_jax",
+      "CFAM:TRIG_toggle_crop_to_aspect_ratio_avoids_crash"
+    ],
+    "top_keywords": [
+      "resizing",
+      "meets",
+      "division",
+      "zero",
+      "jax",
+      "backend"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 19725,
+        "title": "Resizing layer meets division by zero crash with jax backend",
+        "url": "https://github.com/keras-team/keras/issues/19725"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0050",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_output_missing_keras_mask",
+      "CFAM:PRE_keras_version_3_x",
+      "CFAM:PRE_tensors_with_attached_mask",
+      "CFAM:TAG_api_behavior_change",
+      "CFAM:TAG_keras_3_regression",
+      "CFAM:TAG_mask_propagation",
+      "CFAM:TAG_merge_layers",
+      "CFAM:TRIG_compute_mask_not_invoked_with_list",
+      "CFAM:TRIG_merge_layer_list_input_mask_drop"
+    ],
+    "top_keywords": [
+      "merge",
+      "pass",
+      "masks",
+      "the",
+      "compute_mask",
+      "function",
+      "mask_propagation_failure"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 19817,
+        "title": "Merge layers do not pass masks to the compute_mask function",
+        "url": "https://github.com/keras-team/keras/issues/19817"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-SERIALIZATION_CHECKPOINTING-0051",
+    "scenario_type": "SERIALIZATION_CHECKPOINTING",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "exception",
+      "serialization_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_load_weights_oracle",
+      "CFAM:ORID_weights_visibility_oracle",
+      "CFAM:PRE_keras3_layer_composition_context",
+      "CFAM:PRE_model_expects_tracked_weights",
+      "CFAM:TAG_build_lifecycle",
+      "CFAM:TAG_custom_layer",
+      "CFAM:TAG_keras3_regression",
+      "CFAM:TAG_layer_composition",
+      "CFAM:TAG_pretrained_weight_loading",
+      "CFAM:TAG_weight_tracking",
+      "CFAM:TRIG_input_shape_dependent_sublayers_require_build_time_shape",
+      "CFAM:TRIG_model_weights_count_incorrect_for_composed_layer",
+      "CFAM:TRIG_pretrained_weights_load_fails_due_to_hidden_weights",
+      "CFAM:TRIG_sublayers_created_in_build_without_manual_build"
+    ],
+    "top_keywords": [
+      "custom",
+      "default",
+      "composition",
+      "hide",
+      "their",
+      "weights",
+      "serialization_mismatch"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 20004,
+        "title": "Custom layers with default layers composition hide their weights",
+        "url": "[https://github.com/keras-team/keras/issues/20004](https://github.com/keras-team/keras/issues/20004)"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-SERIALIZATION_CHECKPOINTING-0052",
+    "scenario_type": "SERIALIZATION_CHECKPOINTING",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_unboundlocalerror_on_second_save",
+      "CFAM:PRE_keras_version_3_4_1",
+      "CFAM:PRE_save_to_existing_directory_unzipped",
+      "CFAM:TAG_assets_store",
+      "CFAM:TAG_error_handling",
+      "CFAM:TAG_model_save",
+      "CFAM:TAG_regression_guard",
+      "CFAM:TAG_saving",
+      "CFAM:TAG_unzipped_savedmodel_dir",
+      "CFAM:TRIG_asset_store_init_failure_then_finally_close",
+      "CFAM:TRIG_assets_dir_already_exists",
+      "CFAM:TRIG_repeat_save_same_dir_unzipped"
+    ],
+    "top_keywords": [
+      "keras",
+      "src",
+      "saving",
+      "saving_lib",
+      "save_model_to_dir"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 20108,
+        "title": "Bug in `keras.src.saving.saving_lib._save_model_to_dir`",
+        "url": "[https://github.com/keras-team/keras/issues/20108](https://github.com/keras-team/keras/issues/20108)"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0053",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_attributeerror_items_on_jax_array",
+      "CFAM:PRE_custom_model_uses_stateless_api",
+      "CFAM:PRE_jax_backend_enabled",
+      "CFAM:PRE_keras3_jax_stack",
+      "CFAM:TAG_backend_jax",
+      "CFAM:TAG_custom_model_subclass",
+      "CFAM:TAG_custom_test_step",
+      "CFAM:TAG_evaluate_path",
+      "CFAM:TAG_keras3",
+      "CFAM:TAG_logs_dict_protocol",
+      "CFAM:TAG_metrics_handling",
+      "CFAM:TAG_stateless_training_loop",
+      "CFAM:TRIG_custom_test_step_returns_non_dict_logs",
+      "CFAM:TRIG_evaluate_call_triggers_logs_items_access",
+      "CFAM:TRIG_model_compiled_with_optimizer_only_no_loss_no_metrics"
+    ],
+    "top_keywords": [
+      "keras3",
+      "jax",
+      "backend",
+      "results",
+      "attributeerror",
+      "jaxlib",
+      "xla_extension",
+      "arrayimpl"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 20848,
+        "title": "Keras3 with JAX backend results in AttributeError: 'jaxlib.xla_extension.ArrayImpl'",
+        "url": "[https://github.com/keras-team/keras/issues/20848](https://github.com/keras-team/keras/issues/20848)"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0054",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_unbound_torch_name_access",
+      "CFAM:PRE_pytorch_not_installed",
+      "CFAM:TAG_backend_availability",
+      "CFAM:TAG_import_handling",
+      "CFAM:TAG_optional_dependency",
+      "CFAM:TRIG_optional_torch_import_with_except_pass"
+    ],
+    "top_keywords": [
+      "ensured",
+      "torch",
+      "import",
+      "properly",
+      "handled",
+      "import_error_handling"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 21004,
+        "title": "Ensured torch import is properly handled",
+        "url": "https://github.com/keras-team/keras/issues/21004"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TRAINING_FIT_EVALUATE-0055",
+    "scenario_type": "TRAINING_FIT_EVALUATE",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "exception",
+      "mode_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_mode_mismatch_loss_vs_metrics_key_resolution",
+      "CFAM:ORID_valueerror_on_compile_or_train_with_metrics_dict",
+      "CFAM:PRE_dict_named_outputs_with_unnamed_layers",
+      "CFAM:PRE_keras_3_x_affected",
+      "CFAM:TAG_dict_outputs",
+      "CFAM:TAG_keras3_regression",
+      "CFAM:TAG_metrics_mapping",
+      "CFAM:TAG_model_compile",
+      "CFAM:TAG_multi_output",
+      "CFAM:TAG_train_on_batch",
+      "CFAM:TRIG_compile_with_loss_dict_keyed_by_outputs",
+      "CFAM:TRIG_dict_output_model_with_unnamed_output_layers",
+      "CFAM:TRIG_metrics_dict_keyed_by_outputs_triggers_valueerror",
+      "CFAM:TRIG_named_output_layers_as_workaround",
+      "CFAM:TRIG_train_on_batch_with_dict_targets"
+    ],
+    "top_keywords": [
+      "incoherent",
+      "behaviour",
+      "compile",
+      "between",
+      "loss",
+      "metrics",
+      "for",
+      "dict",
+      "output",
+      "mode_mismatch"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 21675,
+        "title": "Incoherent behaviour in Model.compile between loss & metrics for dict output Models",
+        "url": "[https://github.com/keras-team/keras/issues/21675](https://github.com/keras-team/keras/issues/21675)"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-DTYPE_PRECISION-0056",
+    "scenario_type": "DTYPE_PRECISION",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "Apache MXNet",
+    "oracle_types": [
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_uint64_shift_output_mismatch",
+      "CFAM:PRE_mxnet_numpy_namespace",
+      "CFAM:PRE_shift_amount_uint8_scalar",
+      "CFAM:PRE_uint64_input_dtype",
+      "CFAM:TAG_array_api_conformance",
+      "CFAM:TAG_bitwise_shift",
+      "CFAM:TAG_cpu",
+      "CFAM:TAG_dtype_cast",
+      "CFAM:TAG_mxnet_numpy",
+      "CFAM:TAG_uint64",
+      "CFAM:TRIG_numpy_reference_right_shift_oracle",
+      "CFAM:TRIG_uint64_msb_set_right_shift_by_one"
+    ],
+    "top_keywords": [
+      "numpy",
+      "mxnet",
+      "and",
+      "original",
+      "differ",
+      "bitwise",
+      "right",
+      "shift",
+      "uint64",
+      "types",
+      "output_mismatch_uint64_bitwise_right_shift"
+    ],
+    "evidence_members": [
+      {
+        "library": "Apache MXNet",
+        "bug_no": 20968,
+        "title": "mxnet.numpy and original numpy differ on bitwise right shift of uint64 types",
+        "url": "https://github.com/apache/mxnet/issues/20968"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TRAINING_FIT_EVALUATE-0057",
+    "scenario_type": "TRAINING_FIT_EVALUATE",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "Apache MXNet",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_undefined_function_exception",
+      "CFAM:PRE_julia_frontend_usage",
+      "CFAM:TAG_api_mismatch",
+      "CFAM:TAG_frontend_backend_inconsistency",
+      "CFAM:TAG_julia_binding",
+      "CFAM:TAG_optimizer_setup",
+      "CFAM:TRIG_undefined_set_optimizer_function"
+    ],
+    "top_keywords": [
+      "set_optimizer",
+      "does",
+      "exist",
+      "missing_api_symbol"
+    ],
+    "evidence_members": [
+      {
+        "library": "Apache MXNet",
+        "bug_no": 18514,
+        "title": "set_optimizer does not exist in model.jl",
+        "url": "https://github.com/apache/mxnet/issues/18514"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0058",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "Apache MXNet",
+    "oracle_types": [
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_boolean_mask_assignment_output_mismatch_vs_expected",
+      "CFAM:PRE_cpu_context_ok",
+      "CFAM:PRE_float_mixed_values_in_2d_tensor",
+      "CFAM:PRE_mxnet_classic_ndarray_mode",
+      "CFAM:TAG_boolean_mask",
+      "CFAM:TAG_cpu",
+      "CFAM:TAG_indexed_assignment",
+      "CFAM:TAG_inplace_update",
+      "CFAM:TAG_mxnet_ndarray",
+      "CFAM:TAG_numpy_compat",
+      "CFAM:TRIG_boolean_mask_from_equality_on_ndarray",
+      "CFAM:TRIG_inplace_setitem_with_boolean_mask",
+      "CFAM:TRIG_mask_selects_subset_not_all_elements",
+      "CFAM:TRIG_post_assignment_value_preservation_required"
+    ],
+    "top_keywords": [
+      "incorrect",
+      "indexed",
+      "assignment",
+      "boolean_mask_indexed_assignment_incorrect_write"
+    ],
+    "evidence_members": [
+      {
+        "library": "Apache MXNet",
+        "bug_no": 17342,
+        "title": "[bug] Incorrect Indexed Assignment",
+        "url": "https://github.com/apache/mxnet/issues/17342"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-DTYPE_PRECISION-0059",
+    "scenario_type": "DTYPE_PRECISION",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "Apache MXNet",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_unsupported_dtype_valueerror",
+      "CFAM:PRE_affected_mxnet_versions_pre_fix",
+      "CFAM:PRE_mxnet_python_api_from_numpy",
+      "CFAM:PRE_numpy_float16_input",
+      "CFAM:TAG_cpu_gpu_independent",
+      "CFAM:TAG_dlpack_interop",
+      "CFAM:TAG_dtype_support",
+      "CFAM:TAG_float16",
+      "CFAM:TAG_ndarray_conversion",
+      "CFAM:TAG_numpy_bridge",
+      "CFAM:TRIG_dlpack_type_map_missing_float16",
+      "CFAM:TRIG_from_numpy_float16_raises_unsupported"
+    ],
+    "top_keywords": [
+      "mxnet",
+      "ndarray",
+      "from_numpy",
+      "throws",
+      "for",
+      "float16",
+      "unsupported_dtype_in_numpy_to_ndarray_conversion"
+    ],
+    "evidence_members": [
+      {
+        "library": "Apache MXNet",
+        "bug_no": 17218,
+        "title": "mxnet.ndarray.from_numpy() throws error for float16 dtype",
+        "url": "https://github.com/apache/mxnet/issues/17218"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TVM_RELAY_CODEGEN-0060",
+    "scenario_type": "TVM_RELAY_CODEGEN",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "Apache MXNet",
+    "oracle_types": [
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_generated_description_is_incomplete",
+      "CFAM:PRE_opwrappergenerator_used_for_cxx_header",
+      "CFAM:TAG_codegen",
+      "CFAM:TAG_cxx_wrapper",
+      "CFAM:TAG_docstring_formatting",
+      "CFAM:TAG_header_generation",
+      "CFAM:TAG_line_wrapping",
+      "CFAM:TAG_python_script",
+      "CFAM:TRIG_wrapdescription_long_line_loses_tail"
+    ],
+    "top_keywords": [
+      "incomplete",
+      "description",
+      "generation",
+      "opwrappergenerator",
+      "codegen_incomplete_output_missing_tail_segment"
+    ],
+    "evidence_members": [
+      {
+        "library": "Apache MXNet",
+        "bug_no": 17062,
+        "title": "Incomplete description generation with OpWrapperGenerator.py",
+        "url": "https://github.com/apache/mxnet/issues/17062"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0061",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "Apache MXNet",
+    "oracle_types": [
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_oracle_degenerate_last_category",
+      "CFAM:ORID_oracle_reference_freq_divergence",
+      "CFAM:PRE_multinomial_with_uniform_probs",
+      "CFAM:PRE_npx_set_np_mode_enabled",
+      "CFAM:PRE_platform_sensitive_windows_pip_wheel",
+      "CFAM:TAG_distribution_wheel_vs_source",
+      "CFAM:TAG_multinomial",
+      "CFAM:TAG_npx_set_np",
+      "CFAM:TAG_numpy_compat",
+      "CFAM:TAG_platform_windows",
+      "CFAM:TAG_rng",
+      "CFAM:TRIG_mxnet_np_multinomial_degenerates_to_last_bin",
+      "CFAM:TRIG_mxnet_vs_numpy_reference_mismatch_accumulated_samples",
+      "CFAM:TRIG_wheel_build_commit_lag_platform_variance"
+    ],
+    "top_keywords": [
+      "numpy",
+      "random",
+      "multinomial",
+      "different",
+      "random_multinomial_distribution_mismatch_or_degenerate_output"
+    ],
+    "evidence_members": [
+      {
+        "library": "Apache MXNet",
+        "bug_no": 15383,
+        "title": "[numpy] np.random.multinomial is different from _np",
+        "url": "https://github.com/apache/mxnet/issues/15383"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0062",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "Apache MXNet",
+    "oracle_types": [
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_module_vs_ndarray_output_mismatch",
+      "CFAM:PRE_mxnet_version_1_3_0",
+      "CFAM:TAG_api_inconsistency",
+      "CFAM:TAG_batchnorm",
+      "CFAM:TAG_executor_api",
+      "CFAM:TAG_ndarray_api",
+      "CFAM:TAG_normalization",
+      "CFAM:TAG_numerical_discrepancy",
+      "CFAM:TAG_symbol_module_api",
+      "CFAM:TRIG_batchnorm_module_vs_ndarray_output_divergence",
+      "CFAM:TRIG_executor_api_matches_ndarray_not_module"
+    ],
+    "top_keywords": [
+      "batchnorm",
+      "gets",
+      "inconsistent",
+      "result",
+      "between",
+      "module",
+      "and",
+      "ndarray",
+      "api_semantics_mismatch_batchnorm_normalization"
+    ],
+    "evidence_members": [
+      {
+        "library": "Apache MXNet",
+        "bug_no": 14710,
+        "title": "BatchNorm gets inconsistent result between Module API and NDArray API",
+        "url": "https://github.com/apache/mxnet/issues/14710"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0063",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "TensorFlow",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_typeerror_on_tensor_pydiv",
+      "CFAM:PRE_py_future_division_enabled",
+      "CFAM:PRE_tf_older_than_0_6_0",
+      "CFAM:TAG_api_operator_overload",
+      "CFAM:TAG_example_script_ptb_word_lm",
+      "CFAM:TAG_python_division_semantics",
+      "CFAM:TAG_tensor_scalar_division",
+      "CFAM:TRIG_tensor_true_div_by_py_scalar_float_raises_typeerror",
+      "CFAM:TRIG_tensor_true_div_by_py_scalar_int_raises_typeerror"
+    ],
+    "top_keywords": [
+      "ptb_word_lm",
+      "unsupported",
+      "operand",
+      "type",
+      "for",
+      "and",
+      "int"
+    ],
+    "evidence_members": [
+      {
+        "library": "TensorFlow",
+        "bug_no": 506,
+        "title": "ptb_word_lm.py error: unsupported operand type(s) for /: 'Tensor' and 'int'",
+        "url": "https://github.com/tensorflow/tensorflow/issues/506"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0064",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "TensorFlow",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_exception_on_empty_bucket_get_batch",
+      "CFAM:PRE_bucketed_dev_set",
+      "CFAM:PRE_eval_loop_translate_py",
+      "CFAM:TAG_bucketing",
+      "CFAM:TAG_data_pipeline",
+      "CFAM:TAG_dev_set",
+      "CFAM:TAG_evaluation_loop",
+      "CFAM:TAG_seq2seq",
+      "CFAM:TAG_translate_py",
+      "CFAM:TRIG_empty_dev_bucket_get_batch_crash",
+      "CFAM:TRIG_missing_length_range_bucket_empty"
+    ],
+    "top_keywords": [
+      "translate",
+      "empty",
+      "buckets",
+      "sets",
+      "will",
+      "crash_on_empty_bucket"
+    ],
+    "evidence_members": [
+      {
+        "library": "TensorFlow",
+        "bug_no": 649,
+        "title": "translate.py - empty _buckets sets will crash",
+        "url": "https://github.com/tensorflow/tensorflow/issues/649"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0065",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_typeerror_regex_on_bytes_after_rb",
+      "CFAM:ORID_unicodedecodeerror_ascii_on_vocab_iter",
+      "CFAM:PRE_non_ascii_training_data",
+      "CFAM:PRE_python_3_4_runtime",
+      "CFAM:PRE_seq2seq_translate_example",
+      "CFAM:PRE_tensorflow_0_7_1",
+      "CFAM:TAG_data_utils_tokenizer",
+      "CFAM:TAG_gfile_text_io",
+      "CFAM:TAG_python3_bytes_unicode",
+      "CFAM:TAG_rnn_translate_tutorial",
+      "CFAM:TAG_vocab_creation_path",
+      "CFAM:TRIG_binary_read_bytes_breaks_string_regex_tokenizer",
+      "CFAM:TRIG_gfile_text_mode_ascii_decode_on_nonascii"
+    ],
+    "top_keywords": [
+      "seq2seq",
+      "tutorial",
+      "example",
+      "working",
+      "for"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow",
+        "bug_no": 1432,
+        "title": "seq2seq tutorial example not working for python 3.4",
+        "url": "https://github.com/tensorflow/tensorflow/issues/1432"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0066",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "TensorFlow",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_typeerror_unorderable_types_during_sort",
+      "CFAM:PRE_mixed_feature_column_types_present",
+      "CFAM:PRE_python3_runtime",
+      "CFAM:PRE_tf_contrib_learn_dnn_linear_combined_estimator",
+      "CFAM:TAG_contrib_learn",
+      "CFAM:TAG_estimator",
+      "CFAM:TAG_feature_columns",
+      "CFAM:TAG_python3",
+      "CFAM:TAG_sorting_ordering",
+      "CFAM:TAG_wide_and_deep_tutorial",
+      "CFAM:TRIG_sort_set_of_mixed_feature_column_types_py3_typeerror",
+      "CFAM:TRIG_wide_n_deep_tutorial_dict_merge_py3_path_exposes_bug"
+    ],
+    "top_keywords": [
+      "dnn_linear_combined",
+      "compatible"
+    ],
+    "evidence_members": [
+      {
+        "library": "TensorFlow",
+        "bug_no": 3200,
+        "title": "dnn_linear_combined.py is not compatible with Python 3",
+        "url": "https://github.com/tensorflow/tensorflow/issues/3200"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-DTYPE_PRECISION-0067",
+    "scenario_type": "DTYPE_PRECISION",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "TensorFlow",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_missing_gpu_kernel_invalid_argument",
+      "CFAM:PRE_explicit_gpu_placement",
+      "CFAM:PRE_gpu_device_available_cc35_plus",
+      "CFAM:PRE_graph_mode_session",
+      "CFAM:TAG_autodiff_gradients",
+      "CFAM:TAG_cwise_binary_ops",
+      "CFAM:TAG_dt_complex128",
+      "CFAM:TAG_dt_complex64",
+      "CFAM:TAG_gpu",
+      "CFAM:TAG_kernel_registration",
+      "CFAM:TAG_session_graph_mode",
+      "CFAM:TRIG_complex64_cwise_add_on_gpu",
+      "CFAM:TRIG_complex64_cwise_sub_mul_div_on_gpu",
+      "CFAM:TRIG_complex64_gradients_on_gpu_require_complex_kernels"
+    ],
+    "top_keywords": [
+      "basic",
+      "element_wise",
+      "complex",
+      "number",
+      "calculations",
+      "available",
+      "missing_gpu_kernel_for_complex_dtype"
+    ],
+    "evidence_members": [
+      {
+        "library": "TensorFlow",
+        "bug_no": 3624,
+        "title": "Basic Element-wise Complex Number Calculations Not Available On GPU",
+        "url": "https://github.com/tensorflow/tensorflow/issues/3624"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0068",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "TensorFlow",
+    "oracle_types": [
+      "crash"
+    ],
+    "top_families": [
+      "CFAM:ORID_std_bad_alloc_abort",
+      "CFAM:PRE_tf_graph_transforms_tool",
+      "CFAM:PRE_transform_script_passed_via_cli",
+      "CFAM:TAG_bazel_tooling",
+      "CFAM:TAG_cli_parser",
+      "CFAM:TAG_graph_transforms",
+      "CFAM:TAG_inception_graph_pb",
+      "CFAM:TAG_model_compression",
+      "CFAM:TAG_quantization",
+      "CFAM:TAG_transform_graph",
+      "CFAM:TRIG_input_output_tensor_names_provided",
+      "CFAM:TRIG_round_weights_transform_present",
+      "CFAM:TRIG_transforms_arg_multiline_with_backslash_newlines"
+    ],
+    "top_keywords": [
+      "std",
+      "bad_alloc",
+      "tensorflow",
+      "retrained",
+      "compression",
+      "terminate",
+      "called",
+      "throwing",
+      "instance",
+      "what",
+      "aborted",
+      "core",
+      "dumped"
+    ],
+    "evidence_members": [
+      {
+        "library": "TensorFlow",
+        "bug_no": 7321,
+        "title": "Tensorflow retrained model compression fails with error: terminate called after throwing an instance of 'std::bad_alloc' what(): std::bad_alloc Aborted (core dumped)",
+        "url": "https://github.com/tensorflow/tensorflow/issues/7321"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-SPARSE-0069",
+    "scenario_type": "SPARSE",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "TensorFlow",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_attribute_error_sparse_tensor_name",
+      "CFAM:PRE_sparse_tensor_placeholder",
+      "CFAM:PRE_tf_v1_graph_mode",
+      "CFAM:PRE_tfdbg_local_cli_wrapper",
+      "CFAM:TAG_debug_wrapper",
+      "CFAM:TAG_session_run",
+      "CFAM:TAG_sparse_tensor",
+      "CFAM:TAG_tfdbg",
+      "CFAM:TRIG_tfdbg_feed_dict_sparse_tensor",
+      "CFAM:TRIG_tfdbg_run_start_feed_dict_introspection"
+    ],
+    "top_keywords": [
+      "tfdbg",
+      "does",
+      "sparse"
+    ],
+    "evidence_members": [
+      {
+        "library": "TensorFlow",
+        "bug_no": 12059,
+        "title": "tfdbg does not work with sparse tensors",
+        "url": "https://github.com/tensorflow/tensorflow/issues/12059"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-SERIALIZATION_CHECKPOINTING-0070",
+    "scenario_type": "SERIALIZATION_CHECKPOINTING",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "TensorFlow",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_gpu_kernel_missing_for_save_op",
+      "CFAM:PRE_custom_estimator",
+      "CFAM:PRE_gpu_available",
+      "CFAM:PRE_tf_version_1_x",
+      "CFAM:TAG_device_placement",
+      "CFAM:TAG_estimator",
+      "CFAM:TAG_export_savedmodel",
+      "CFAM:TAG_gpu",
+      "CFAM:TAG_saver",
+      "CFAM:TRIG_explicit_gpu_device_context",
+      "CFAM:TRIG_saver_op_colocated_on_gpu",
+      "CFAM:TRIG_sharded_saver_invocation"
+    ],
+    "top_keywords": [
+      "cannot",
+      "assign",
+      "for",
+      "operation",
+      "save",
+      "shardedfilename_1",
+      "exporting",
+      "custom",
+      "estimator",
+      "device_assignment_error"
+    ],
+    "evidence_members": [
+      {
+        "library": "TensorFlow",
+        "bug_no": 13336,
+        "title": "Cannot assign a device for operation 'save/ShardedFilename_1' when exporting custom Estimator",
+        "url": "https://github.com/tensorflow/tensorflow/issues/13336"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0071",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "TensorFlow",
+    "oracle_types": [
+      "exception",
+      "mode_mismatch",
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_degenerate_or_garbage_output_under_memory_pressure",
+      "CFAM:ORID_no_silent_failure_after_cuda_calls",
+      "CFAM:ORID_session_creation_should_fail_with_insufficient_mem",
+      "CFAM:PRE_gpu_backend_nvidia_cuda",
+      "CFAM:PRE_near_exhausted_gpu_memory_before_tf_starts",
+      "CFAM:PRE_tf_session_based_runtime",
+      "CFAM:TAG_cuda",
+      "CFAM:TAG_gpu",
+      "CFAM:TAG_multi_process",
+      "CFAM:TAG_numerical_corruption",
+      "CFAM:TAG_oom_handling",
+      "CFAM:TAG_session_creation",
+      "CFAM:TRIG_cuda_runtime_init_silent_failure_under_low_mem",
+      "CFAM:TRIG_multi_process_concurrent_tf_startup_under_low_free_gpu_mem",
+      "CFAM:TRIG_preallocate_most_gpu_memory_with_non_tf_process"
+    ],
+    "top_keywords": [
+      "tensorflow",
+      "predicts",
+      "odd",
+      "results",
+      "insufficient",
+      "memory",
+      "silent_gpu_init_failure_causes_garbage_output_instead_of_oom"
+    ],
+    "evidence_members": [
+      {
+        "library": "TensorFlow",
+        "bug_no": 14169,
+        "title": "Tensorflow predicts odd results with insufficient GPU memory",
+        "url": "https://github.com/tensorflow/tensorflow/issues/14169"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0072",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "keras",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_broadcasting_shape_exception_on_dynamic_call",
+      "CFAM:PRE_batchnorm_training_true",
+      "CFAM:PRE_keras_backend_jax",
+      "CFAM:PRE_version_context_reported",
+      "CFAM:TAG_batchnormalization",
+      "CFAM:TAG_dynamic_execution",
+      "CFAM:TAG_jax_backend",
+      "CFAM:TAG_masking",
+      "CFAM:TAG_normalization_layer",
+      "CFAM:TAG_shape_validation",
+      "CFAM:TRIG_mask_non_broadcastable_to_input",
+      "CFAM:TRIG_static_shape_inference_does_not_validate_mask"
+    ],
+    "top_keywords": [
+      "mul",
+      "got",
+      "incompatible",
+      "shapes",
+      "for",
+      "broadcasting",
+      "shape_validation_gap"
+    ],
+    "evidence_members": [
+      {
+        "library": "keras",
+        "bug_no": 20219,
+        "title": "mul got incompatible shapes for broadcasting",
+        "url": "https://github.com/keras-team/keras/issues/20219"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0073",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_invalidargument_vector_required_shape_empty",
+      "CFAM:PRE_keras_model_with_lambda_preprocess",
+      "CFAM:PRE_tf_hub_elmo_v2_module",
+      "CFAM:PRE_tf_version_1_13_1",
+      "CFAM:TAG_batch_size_1",
+      "CFAM:TAG_elmo",
+      "CFAM:TAG_keras",
+      "CFAM:TAG_lambda_layer",
+      "CFAM:TAG_nlp",
+      "CFAM:TAG_shape_rank",
+      "CFAM:TAG_string_tensor",
+      "CFAM:TAG_tf1",
+      "CFAM:TAG_tf_hub",
+      "CFAM:TRIG_single_element_string_list_input",
+      "CFAM:TRIG_squeeze_removes_batch_dim_for_single_sample"
+    ],
+    "top_keywords": [
+      "cannot",
+      "feed",
+      "single",
+      "element",
+      "elmo",
+      "tf_hub",
+      "embedder"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow",
+        "bug_no": 26846,
+        "title": "Cannot feed single element in ELMo TF-HUB embedder",
+        "url": "https://github.com/tensorflow/tensorflow/issues/26846"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TRACING_GRAPH_FUNCTION-0074",
+    "scenario_type": "TRACING_GRAPH_FUNCTION",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_failed_precondition_table_already_initialized",
+      "CFAM:PRE_densefeatures_with_categorical_lookup_tables",
+      "CFAM:PRE_graph_execution_via_tf_function",
+      "CFAM:PRE_tf_2_0_0_alpha0",
+      "CFAM:TAG_categorical_column",
+      "CFAM:TAG_crossed_column",
+      "CFAM:TAG_densefeatures",
+      "CFAM:TAG_eager_to_graph",
+      "CFAM:TAG_feature_columns",
+      "CFAM:TAG_lookup_table",
+      "CFAM:TAG_tf2",
+      "CFAM:TAG_tf_data_pipeline",
+      "CFAM:TAG_tf_function",
+      "CFAM:TRIG_crossed_bucketized_and_categorical_indicator_path_triggers_hash_table_init",
+      "CFAM:TRIG_non_incrementing_counter_input_reproduces_table_already_initialized"
+    ],
+    "top_keywords": [
+      "tensorflow",
+      "adding",
+      "function",
+      "decorator",
+      "categorical",
+      "feature_column",
+      "raises",
+      "failedpreconditionerror",
+      "table",
+      "already",
+      "initialized"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow",
+        "bug_no": 27086,
+        "title": "Tensorflow 2.0: Adding @tf.function decorator with categorical feature_column raises FailedPreconditionError: Table already initialized",
+        "url": "https://github.com/tensorflow/tensorflow/issues/27086"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0075",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "logging_based"
+    ],
+    "top_families": [
+      "CFAM:ORID_process_memory_growth_over_iterations",
+      "CFAM:PRE_h5_model_available_on_disk",
+      "CFAM:PRE_repeated_load_in_same_process",
+      "CFAM:PRE_tf2_alpha_keras_graph_managed",
+      "CFAM:TAG_cpu",
+      "CFAM:TAG_h5_serialization",
+      "CFAM:TAG_keras",
+      "CFAM:TAG_memory_leak",
+      "CFAM:TAG_model_loading",
+      "CFAM:TAG_session_graph_lifecycle",
+      "CFAM:TAG_tf2_alpha",
+      "CFAM:TRIG_clear_session_before_each_load",
+      "CFAM:TRIG_leak_observed_as_monotonic_rss_growth",
+      "CFAM:TRIG_repeated_load_same_h5_model",
+      "CFAM:TRIG_use_nontrivial_model_graph"
+    ],
+    "top_keywords": [
+      "0_alpha0",
+      "memory",
+      "leak",
+      "keras",
+      "load_model",
+      "memory_leak"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow",
+        "bug_no": 27511,
+        "title": "[TF==2.0.0-alpha0] Memory leak with tf.keras.models.load_model",
+        "url": "https://github.com/tensorflow/tensorflow/issues/27511"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-SERIALIZATION_CHECKPOINTING-0076",
+    "scenario_type": "SERIALIZATION_CHECKPOINTING",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_not_found_varhandleop_int32_gpu",
+      "CFAM:PRE_gpu_execution_visible",
+      "CFAM:PRE_multiworker_mirrored_strategy_active",
+      "CFAM:PRE_tf_version_2_0_0b1_gpu_build",
+      "CFAM:TAG_callbacks",
+      "CFAM:TAG_distributed_training",
+      "CFAM:TAG_gpu",
+      "CFAM:TAG_keras",
+      "CFAM:TAG_model_checkpoint",
+      "CFAM:TAG_multiworker_mirrored_strategy",
+      "CFAM:TAG_tf2",
+      "CFAM:TRIG_callback_train_begin_creates_int32_state_on_gpu",
+      "CFAM:TRIG_custom_checkpoint_only_chief_avoids_bug",
+      "CFAM:TRIG_model_checkpoint_callback_under_multiworker",
+      "CFAM:TRIG_tf_config_multirole_single_host"
+    ],
+    "top_keywords": [
+      "using",
+      "keras",
+      "modelcheckpoint",
+      "distributing",
+      "under",
+      "multiworkermirroredstrategy"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow",
+        "bug_no": 31070,
+        "title": "Issue using tf.keras ModelCheckpoint when distributing under MultiWorkerMirroredStrategy",
+        "url": "https://github.com/tensorflow/tensorflow/issues/31070"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0077",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "logging_based"
+    ],
+    "top_families": [
+      "CFAM:ORID_model_visualization_layer_count_explosion",
+      "CFAM:PRE_graph_introspection_used",
+      "CFAM:PRE_sequence_numeric_column_path",
+      "CFAM:PRE_tf_2_0_beta_sequencefeatures",
+      "CFAM:TAG_feature_column",
+      "CFAM:TAG_keras",
+      "CFAM:TAG_model_summary",
+      "CFAM:TAG_model_visualization",
+      "CFAM:TAG_plot_model",
+      "CFAM:TAG_sequencefeatures",
+      "CFAM:TAG_tf2",
+      "CFAM:TRIG_dense_to_sparse_wrapping_required_for_sequencefeatures_input",
+      "CFAM:TRIG_sequencefeatures_with_sequence_numeric_column_expands_oplayers",
+      "CFAM:TRIG_sparse_conversion_must_be_lambda_layer_in_tf_2_3"
+    ],
+    "top_keywords": [
+      "sequencefeatures",
+      "gets",
+      "overly",
+      "complex",
+      "used",
+      "sequence_numeric_column",
+      "logging_based"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow",
+        "bug_no": 31240,
+        "title": "SequenceFeatures gets overly complex when used with a sequence_numeric_column",
+        "url": "https://github.com/tensorflow/tensorflow/issues/31240"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TRAINING_FIT_EVALUATE-0078",
+    "scenario_type": "TRAINING_FIT_EVALUATE",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "TensorFlow",
+    "oracle_types": [
+      "exception",
+      "mode_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_differential_oracle_base_optimizer_vs_loss_scale",
+      "CFAM:ORID_exception_none_values_not_supported",
+      "CFAM:PRE_graph_mode_optimizer_minimize_path",
+      "CFAM:PRE_tf1_contrib_mixed_precision_loss_scale_optimizer",
+      "CFAM:PRE_var_list_includes_non_participating_variable",
+      "CFAM:TAG_contrib",
+      "CFAM:TAG_gradients_none",
+      "CFAM:TAG_graph_mode",
+      "CFAM:TAG_mixed_precision",
+      "CFAM:TAG_optimizer",
+      "CFAM:TAG_tf1",
+      "CFAM:TRIG_base_optimizer_comparison_no_error_with_none_grads",
+      "CFAM:TRIG_is_finite_called_on_none_grad",
+      "CFAM:TRIG_loss_scale_minimize_with_none_grad_in_var_list"
+    ],
+    "top_keywords": [
+      "lossscaleoptimizer",
+      "does"
+    ],
+    "evidence_members": [
+      {
+        "library": "TensorFlow",
+        "bug_no": 31956,
+        "title": "LossScaleOptimizer does not work",
+        "url": "https://github.com/tensorflow/tensorflow/issues/31956"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TRAINING_FIT_EVALUATE-0079",
+    "scenario_type": "TRAINING_FIT_EVALUATE",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "TensorFlow (tf.keras)",
+    "oracle_types": [
+      "mode_mismatch",
+      "output_mismatch"
+    ],
+    "top_families": [
+      "CFAM:ORID_loss_trend_divergence_eager_vs_eager_off",
+      "CFAM:ORID_training_effectiveness_stall_signal",
+      "CFAM:PRE_eager_execution_enabled_path",
+      "CFAM:PRE_tf_2_1_rc2_repro_env",
+      "CFAM:TAG_eager_mode",
+      "CFAM:TAG_keras",
+      "CFAM:TAG_loss_output_alignment",
+      "CFAM:TAG_model_fit",
+      "CFAM:TAG_multi_output_model",
+      "CFAM:TAG_partial_loss",
+      "CFAM:TRIG_eager_mode_loss_filtering_misalignment",
+      "CFAM:TRIG_multi_output_model_second_output_is_train_target",
+      "CFAM:TRIG_output_order_aux_then_train",
+      "CFAM:TRIG_partial_loss_list_with_none_entry",
+      "CFAM:TRIG_workaround_outputs_reordered"
+    ],
+    "top_keywords": [
+      "loss",
+      "simple",
+      "keras",
+      "does",
+      "learn",
+      "unless",
+      "experimental_run_tf_function",
+      "false",
+      "compile",
+      "mode_dependent",
+      "due",
+      "multi_output",
+      "none",
+      "mapping",
+      "learning",
+      "stalls",
+      "diverges",
+      "eager"
+    ],
+    "evidence_members": [
+      {
+        "library": "TensorFlow (tf.keras)",
+        "bug_no": 36044,
+        "title": "Simple keras model, Model.fit() does not learn unless experimental_run_tf_function=False at compile",
+        "url": "https://github.com/tensorflow/tensorflow/issues/36044"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-SERIALIZATION_CHECKPOINTING-0080",
+    "scenario_type": "SERIALIZATION_CHECKPOINTING",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "logging_based"
+    ],
+    "top_families": [
+      "CFAM:ORID_missing_expected_exception_on_fit",
+      "CFAM:PRE_h5_filepath_points_to_existing_directory",
+      "CFAM:PRE_model_fit_with_callback",
+      "CFAM:PRE_tf_version_2_2_0",
+      "CFAM:TAG_callbacks",
+      "CFAM:TAG_filepath_validation",
+      "CFAM:TAG_hdf5",
+      "CFAM:TAG_io_error_handling",
+      "CFAM:TAG_keras",
+      "CFAM:TAG_model_checkpoint",
+      "CFAM:TAG_source_build",
+      "CFAM:TAG_tf_2_2",
+      "CFAM:TRIG_case_sensitive_match_on_ioerror_message_is_a_directory",
+      "CFAM:TRIG_model_checkpoint_expects_specific_ioerror_on_directory_path",
+      "CFAM:TRIG_model_checkpoint_filepath_is_directory_with_h5_suffix"
+    ],
+    "top_keywords": [
+      "test_fit_with_modelcheckpoint_with_dir_as_h5_filepath",
+      "test",
+      "tensorflow",
+      "keras",
+      "callbacks_test",
+      "logging",
+      "exception_type",
+      "expectation",
+      "mismatch",
+      "raised",
+      "due",
+      "case_sensitive",
+      "message",
+      "check"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow",
+        "bug_no": 39883,
+        "title": "test_fit_with_ModelCheckpoint_with_dir_as_h5_filepath test failure in //tensorflow/python/keras:callbacks_test",
+        "url": "https://github.com/tensorflow/tensorflow/issues/39883"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-SPARSE-0081",
+    "scenario_type": "SPARSE",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "backend_mismatch",
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_backend_differential_cpu_gpu_ok_tpu_fails",
+      "CFAM:ORID_tpu_xla_unsupported_op_exception",
+      "CFAM:PRE_loss_reduction_none",
+      "CFAM:PRE_tf_version_2_3_0_affected",
+      "CFAM:PRE_tpu_execution_with_xla_tpu_jit",
+      "CFAM:TAG_loss_sparse_categorical_crossentropy",
+      "CFAM:TAG_masking_weights",
+      "CFAM:TAG_sample_weight",
+      "CFAM:TAG_tf_distribute_tpu_strategy",
+      "CFAM:TAG_tf_keras",
+      "CFAM:TAG_tpu",
+      "CFAM:TAG_xla_tpu_jit",
+      "CFAM:TRIG_broadcastable_sample_weight_triggers_broadcast_weights_assert",
+      "CFAM:TRIG_cpu_gpu_baseline_succeeds_same_code",
+      "CFAM:TRIG_multi_output_with_per_output_sample_weights_variant"
+    ],
+    "top_keywords": [
+      "densetodensesetoperation",
+      "keras",
+      "sparsecategoricalcrossentropy",
+      "sample_weight",
+      "tpu",
+      "registered"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow",
+        "bug_no": 43195,
+        "title": "tf.keras SparseCategoricalCrossentropy with sample_weight on TPU: Error DenseToDenseSetOperation (No registered 'DenseToDenseSetOperation)",
+        "url": "https://github.com/tensorflow/tensorflow/issues/43195"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-DATA_PIPELINE-0082",
+    "scenario_type": "DATA_PIPELINE",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "crash",
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_operator_not_allowed_iterate_tensor",
+      "CFAM:ORID_operator_not_allowed_tensor_as_bool",
+      "CFAM:ORID_session_crash_large_tensorarray",
+      "CFAM:PRE_random_index_tensor_indices",
+      "CFAM:PRE_tensorarray_storage_large_static_size",
+      "CFAM:PRE_tf_function_graph_context",
+      "CFAM:TAG_autograph",
+      "CFAM:TAG_control_flow",
+      "CFAM:TAG_large_buffer",
+      "CFAM:TAG_replay_buffer",
+      "CFAM:TAG_sampling_gather",
+      "CFAM:TAG_tensorarray",
+      "CFAM:TAG_tf_function",
+      "CFAM:TRIG_iteration_over_tensor_indices_in_autograph_loop",
+      "CFAM:TRIG_tensorarray_gather_with_tensor_indices_under_tf_function"
+    ],
+    "top_keywords": [
+      "using",
+      "tensorarray",
+      "for",
+      "storing",
+      "large",
+      "dataset",
+      "interactions",
+      "mode_incompatibility_autograph_tensorarray"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow",
+        "bug_no": 47230,
+        "title": "Using TensorArray for storing large dataset of interactions",
+        "url": "https://github.com/tensorflow/tensorflow/issues/47230"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-SERIALIZATION_CHECKPOINTING-0083",
+    "scenario_type": "SERIALIZATION_CHECKPOINTING",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow/keras",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_save_raises_typeerror_missing_self",
+      "CFAM:PRE_keras_model_with_layer_config_serialization",
+      "CFAM:PRE_tf_version_affected_range",
+      "CFAM:TAG_initializer_serialization",
+      "CFAM:TAG_keras",
+      "CFAM:TAG_layer_config",
+      "CFAM:TAG_model_save",
+      "CFAM:TAG_savedmodel",
+      "CFAM:TAG_tf_version_regression",
+      "CFAM:TRIG_initializer_passed_as_class_not_instance",
+      "CFAM:TRIG_model_save_triggers_layer_config_serialization",
+      "CFAM:TRIG_training_works_but_saving_fails_with_class_initializer"
+    ],
+    "top_keywords": [
+      "keras",
+      "saving",
+      "erroring",
+      "typeerror",
+      "get_config",
+      "missing",
+      "required",
+      "positional",
+      "argument",
+      "self",
+      "serialization_failure"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow/keras",
+        "bug_no": 47450,
+        "title": "Keras model saving erroring: TypeError: get_config() missing 1 required positional argument: 'self'",
+        "url": "https://github.com/tensorflow/tensorflow/issues/47450"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-DTYPE_PRECISION-0084",
+    "scenario_type": "DTYPE_PRECISION",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow_lite",
+    "oracle_types": [
+      "crash"
+    ],
+    "top_families": [
+      "CFAM:ORID_segfault_during_interpreter_invoke",
+      "CFAM:PRE_cpu_backend",
+      "CFAM:PRE_im2col_optimized_conv_path_enabled",
+      "CFAM:PRE_optimization_default_applied",
+      "CFAM:PRE_tflite_interpreter_inference",
+      "CFAM:TAG_conv2d",
+      "CFAM:TAG_cpu_inference",
+      "CFAM:TAG_hybrid_conv_per_channel",
+      "CFAM:TAG_im2col",
+      "CFAM:TAG_int32_index_overflow",
+      "CFAM:TAG_large_output_resolution",
+      "CFAM:TAG_optimized_kernels",
+      "CFAM:TAG_tf_lite_converter_optimize_default",
+      "CFAM:TAG_tflite",
+      "CFAM:TRIG_hybrid_per_channel_conv_execution_path"
+    ],
+    "top_keywords": [
+      "tflite",
+      "segmentation",
+      "fault",
+      "inference",
+      "due",
+      "int",
+      "overflow",
+      "im2col"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow_lite",
+        "bug_no": 47525,
+        "title": "[TFLite] Segmentation fault on inference due to int overflow in im2col",
+        "url": "https://github.com/tensorflow/tensorflow/issues/47525"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-AUTOGRAD_BACKWARD-0085",
+    "scenario_type": "AUTOGRAD_BACKWARD",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow/keras",
+    "oracle_types": [
+      "grad_mismatch",
+      "logging_based"
+    ],
+    "top_families": [
+      "CFAM:ORID_gradients_differ_from_add_layer_baseline",
+      "CFAM:ORID_training_non_convergence_with_plus_only",
+      "CFAM:PRE_custom_keras_layer_call_residual_loop",
+      "CFAM:PRE_tf_version_2_8_rc1_reported",
+      "CFAM:PRE_training_backward_pass_required",
+      "CFAM:TAG_autograd",
+      "CFAM:TAG_custom_layer",
+      "CFAM:TAG_graph_construction",
+      "CFAM:TAG_keras",
+      "CFAM:TAG_residual_connection",
+      "CFAM:TAG_tensor_add",
+      "CFAM:TAG_tensorboard_trace",
+      "CFAM:TAG_training_convergence",
+      "CFAM:TRIG_forward_outputs_identical_but_grads_wrong",
+      "CFAM:TRIG_keras_layer_tensor_add_in_call"
+    ],
+    "top_keywords": [
+      "using",
+      "custom",
+      "residual",
+      "keras",
+      "does",
+      "create",
+      "correct",
+      "graph",
+      "grad_mismatch"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow/keras",
+        "bug_no": 54436,
+        "title": "Using `+` in custom residual Keras `Layer` does not create correct model graph",
+        "url": "https://github.com/tensorflow/tensorflow/issues/54436"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0086",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_bool_param_type_validation_exception_expected",
+      "CFAM:PRE_eager_execution_default",
+      "CFAM:PRE_tf_version_affected_pre_2_9",
+      "CFAM:TAG_api_argument_validation",
+      "CFAM:TAG_axis",
+      "CFAM:TAG_exclusive",
+      "CFAM:TAG_keepdims",
+      "CFAM:TAG_parameter_contract",
+      "CFAM:TAG_reverse",
+      "CFAM:TAG_tf_math",
+      "CFAM:TAG_type_checking",
+      "CFAM:TRIG_cumprod_exclusive_int_accepted",
+      "CFAM:TRIG_cumprod_reverse_int_accepted",
+      "CFAM:TRIG_cumulative_logsumexp_exclusive_int_accepted",
+      "CFAM:TRIG_cumulative_logsumexp_reverse_int_accepted"
+    ],
+    "top_keywords": [
+      "several",
+      "math",
+      "apis",
+      "lack",
+      "input",
+      "checking",
+      "for",
+      "bool",
+      "arguments",
+      "missing_input_validation"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow",
+        "bug_no": 54474,
+        "title": "Several `tf.math` APIs lack input checking for `bool` arguments",
+        "url": "https://github.com/tensorflow/tensorflow/issues/54474"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-AUTOGRAD_BACKWARD-0087",
+    "scenario_type": "AUTOGRAD_BACKWARD",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_backprop_zero_division_error_in_concat_grad",
+      "CFAM:PRE_eager_mode_gradient_tape",
+      "CFAM:PRE_keras_model_with_trainable_vars",
+      "CFAM:PRE_tf_version_2_3_1_reported",
+      "CFAM:TAG_eager_backprop",
+      "CFAM:TAG_keras_model_subclass",
+      "CFAM:TAG_rank0_tensor",
+      "CFAM:TAG_tensor_indexing",
+      "CFAM:TAG_tf_concat",
+      "CFAM:TAG_tf_gradient_tape",
+      "CFAM:TRIG_concat_scalars_in_loss_construction",
+      "CFAM:TRIG_rank0_tensor_from_full_indexing_inside_tape",
+      "CFAM:TRIG_trig_ops_use_scalar_theta_in_trig_functions"
+    ],
+    "top_keywords": [
+      "gradient",
+      "tape",
+      "rank",
+      "causes",
+      "integer",
+      "division",
+      "modulo",
+      "zero"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow",
+        "bug_no": 54984,
+        "title": "gradient tape with rank 0 tensors causes integer division or modulo by zero",
+        "url": "https://github.com/tensorflow/tensorflow/issues/54984"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-TRAINING_FIT_EVALUATE-0088",
+    "scenario_type": "TRAINING_FIT_EVALUATE",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_valueerror_partially_known_tensorshape_on_apply_gradients",
+      "CFAM:PRE_dynamic_shape_variable_declaration",
+      "CFAM:PRE_momentum_optimizer_used",
+      "CFAM:PRE_tf_version_2_8_0_reported",
+      "CFAM:TAG_apply_gradients",
+      "CFAM:TAG_dynamic_shape",
+      "CFAM:TAG_gradienttape",
+      "CFAM:TAG_momentum",
+      "CFAM:TAG_optimizer_slots",
+      "CFAM:TAG_tf_keras_optimizers_sgd",
+      "CFAM:TAG_tf_variable",
+      "CFAM:TRIG_gradient_tape_assign_changes_runtime_shape",
+      "CFAM:TRIG_momentum_vs_no_momentum_behavior_difference",
+      "CFAM:TRIG_sgd_momentum_slot_creation_on_partially_known_shape"
+    ],
+    "top_keywords": [
+      "sgd",
+      "momentum",
+      "optimizer",
+      "update",
+      "for",
+      "variables",
+      "dynamic"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow",
+        "bug_no": 56132,
+        "title": "SGD with momentum optimizer update fails for variables with dynamic shape",
+        "url": "https://github.com/tensorflow/tensorflow/issues/56132"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-SPARSE-0089",
+    "scenario_type": "SPARSE",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "TensorFlow",
+    "oracle_types": [
+      "crash",
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_invalid_indices_type_raises_error",
+      "CFAM:ORID_oom_kill_or_sigkill_exit",
+      "CFAM:PRE_cpu_device_execution_path",
+      "CFAM:PRE_limited_host_memory",
+      "CFAM:PRE_python_3_9_linux_ubuntu_22_04",
+      "CFAM:PRE_tf_version_2_10_binary",
+      "CFAM:TAG_cpu_allocator",
+      "CFAM:TAG_dtype_constraints",
+      "CFAM:TAG_gather_v2",
+      "CFAM:TAG_input_validation",
+      "CFAM:TAG_oom_kill",
+      "CFAM:TAG_ragged",
+      "CFAM:TAG_ragged_util",
+      "CFAM:TAG_repeat_ranges",
+      "CFAM:TRIG_cpu_path_triggers_multi_gb_allocation_before_validation"
+    ],
+    "top_keywords": [
+      "process",
+      "get",
+      "killed",
+      "running",
+      "tensorflow",
+      "ragged",
+      "ragged_util",
+      "repeat_ranges"
+    ],
+    "evidence_members": [
+      {
+        "library": "TensorFlow",
+        "bug_no": 59362,
+        "title": "Process get killed when running tensorflow.python.ops.ragged.ragged_util.repeat_ranges",
+        "url": "https://github.com/tensorflow/tensorflow/issues/59362"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-SPARSE-0090",
+    "scenario_type": "SPARSE",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "crash",
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_expected_invalid_argument_instead_of_abort",
+      "CFAM:ORID_process_abort_or_fatal_tf_check",
+      "CFAM:PRE_linux_ubuntu_22_04_reported",
+      "CFAM:PRE_tf_binary_build",
+      "CFAM:PRE_tf_version_range_affected",
+      "CFAM:TAG_cpu",
+      "CFAM:TAG_gen_ragged_array_ops",
+      "CFAM:TAG_gpu_optional",
+      "CFAM:TAG_input_validation",
+      "CFAM:TAG_ragged",
+      "CFAM:TAG_ragged_cross",
+      "CFAM:TAG_security_vulnerability",
+      "CFAM:TRIG_gen_ragged_array_ops_ragged_cross_call",
+      "CFAM:TRIG_ragged_cross_hash_key_large_int",
+      "CFAM:TRIG_ragged_cross_with_empty_sparse_and_dense_inputs"
+    ],
+    "top_keywords": [
+      "free",
+      "invalid",
+      "pointer",
+      "running",
+      "tensorflow",
+      "gen_ragged_array_ops",
+      "ragged_cross"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow",
+        "bug_no": 59368,
+        "title": "free(): invalid pointer when running tensorflow.python.ops.gen_ragged_array_ops.ragged_cross",
+        "url": "https://github.com/tensorflow/tensorflow/issues/59368"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-SPARSE-0091",
+    "scenario_type": "SPARSE",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "crash"
+    ],
+    "top_families": [
+      "CFAM:ORID_process_crash_segfault",
+      "CFAM:PRE_gpu_present_or_gpu_kernel_path",
+      "CFAM:PRE_linux_ubuntu_22_04_repro",
+      "CFAM:PRE_tf_version_2_10_to_2_12_dev_affected",
+      "CFAM:TAG_crash",
+      "CFAM:TAG_empty_input",
+      "CFAM:TAG_gpu_kernel",
+      "CFAM:TAG_sparse_ops",
+      "CFAM:TAG_tf_raw_op",
+      "CFAM:TRIG_all_inputs_empty_list",
+      "CFAM:TRIG_invalid_num_buckets_negative_or_wrong_type",
+      "CFAM:TRIG_sparse_cross_hashed_raw_op_call",
+      "CFAM:TRIG_strong_hash_disabled"
+    ],
+    "top_keywords": [
+      "segmentation",
+      "fault",
+      "running",
+      "tensorflow",
+      "gen_sparse_ops",
+      "sparse_cross_hashed"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow",
+        "bug_no": 59372,
+        "title": "Segmentation fault when running tensorflow.python.ops.gen_sparse_ops.sparse_cross_hashed",
+        "url": "https://github.com/tensorflow/tensorflow/issues/59372"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-OTHER-0092",
+    "scenario_type": "OTHER",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow",
+    "oracle_types": [
+      "exception",
+      "logging_based"
+    ],
+    "top_families": [
+      "CFAM:ORID_gfile_gcs_call_fails_when_default_metadata_blocked",
+      "CFAM:ORID_metadata_override_not_respected_network_target",
+      "CFAM:PRE_custom_metadata_endpoint_override_expected",
+      "CFAM:PRE_gcs_path_access_via_gfile",
+      "CFAM:TAG_cloud_auth",
+      "CFAM:TAG_env_var_config",
+      "CFAM:TAG_gcs",
+      "CFAM:TAG_metadata_server",
+      "CFAM:TAG_tf_io_gfile",
+      "CFAM:TRIG_default_metadata_endpoint_hardcoded",
+      "CFAM:TRIG_gce_metadata_host_expected_for_endpoint_override",
+      "CFAM:TRIG_gce_metadata_ip_override_ignored_in_gfile_gcs"
+    ],
+    "top_keywords": [
+      "metadata",
+      "server",
+      "host",
+      "isn",
+      "configurable",
+      "gfile",
+      "configuration_ignored"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow",
+        "bug_no": 60235,
+        "title": "Metadata server host isn't configurable with tf.io.gfile",
+        "url": "https://github.com/tensorflow/tensorflow/issues/60235"
+      }
+    ]
+  },
+  {
+    "gcfl_id": "GCFL-DATA_PIPELINE-0093",
+    "scenario_type": "DATA_PIPELINE",
+    "cluster_size": 1,
+    "library_purity": 1.0,
+    "top_library": "tensorflow/keras",
+    "oracle_types": [
+      "exception"
+    ],
+    "top_families": [
+      "CFAM:ORID_no_loss_to_compute_value_error",
+      "CFAM:PRE_keras_training_via_model_fit",
+      "CFAM:PRE_model_output_is_dict_with_single_key",
+      "CFAM:PRE_tf_version_regression_window",
+      "CFAM:PRE_tfdata_returns_dict_for_y_true",
+      "CFAM:TAG_dict_labels",
+      "CFAM:TAG_dict_model_outputs",
+      "CFAM:TAG_keras_model_fit",
+      "CFAM:TAG_output_name_mapping",
+      "CFAM:TAG_single_output_model",
+      "CFAM:TAG_tfdata_pipeline",
+      "CFAM:TRIG_dict_model_output_with_single_loss_object_triggers_no_loss_compute_on_mismatch",
+      "CFAM:TRIG_dict_y_true_key_mismatch_with_model_output_names",
+      "CFAM:TRIG_requires_consistent_triple_naming_for_dict_io"
+    ],
+    "top_keywords": [
+      "losses",
+      "return",
+      "none",
+      "dictionary",
+      "used",
+      "pipeline",
+      "and",
+      "mode_mismatch"
+    ],
+    "evidence_members": [
+      {
+        "library": "tensorflow/keras",
+        "bug_no": 72679,
+        "title": "losses return None if dictionary is used in pipeline and model",
+        "url": "https://github.com/tensorflow/tensorflow/issues/72679"
+      }
+    ]
+  }
+]

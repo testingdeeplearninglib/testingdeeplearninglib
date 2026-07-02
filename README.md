@@ -52,35 +52,39 @@ of these have been executed and manually triaged, producing **14** unique upstre
 bug reports, of which **5** are developer-confirmed (including a maintainer-verified
 DeepSpeed ZeRO-3 defect). Remaining reports are pending or undecided.
 
+
 ## 2. Repository layout
+
+```text
 testing_deeplearning_libraries/
-├─ dataset/
-│  ├─ feature_all.json                 # raw structured entries
-│  ├─ feature_all_with_scenario.json   # entries with scenario labels
-│  ├─ testcases/
-│  │  ├─ deepspeed/
-│  │  ├─ keras/
-│  │  ├─ mxnet/
-│  │  ├─ tensorflow/
-│  │  └─ tvm/
-│  └─ testcases_generation/
-│     └─ generate_testcases.py
-├─ scripts/
-│  ├─ gcfl/
-│  │  ├─ GCFL_v12.py                    # multi-signal clustering (union-find)
-│  │  ├─ GCFL_B.json
-│  │  └─ GCFL_B_diagnostics.json
-│  ├─ prompt_pack_construction/
-│  │  ├─ make_prompt_pack_v2.py
-│  │  ├─ make_prompt_pack.py
-│  │  ├─ GCFL_B_loosen1_prompts_v2.json
-│  │  └─ GCFL_B_loosen1_prompts.json
-│  ├─ tools/
-│  │  ├─ add_scenario.py
-│  │  └─ summarize_results.py
-│  ├─ bug_extraction.py
-│  └─ reported_bugs.pdf
-└─ README.md
+├── dataset/
+│   ├── feature_all.json                 # Raw structured feature entries
+│   ├── feature_all_with_scenario.json   # Feature entries enriched with scenario labels
+│   ├── testcases/
+│   │   ├── deepspeed/
+│   │   ├── keras/
+│   │   ├── mxnet/
+│   │   ├── tensorflow/
+│   │   └── tvm/
+│   └── testcases_generation/
+│       └── generate_testcases.py        # Script for generating test cases from prompt packs
+├── scripts/
+│   ├── gcfl/
+│   │   ├── GCFL_v12.py                  # Multi-signal GCFL clustering using union-find
+│   │   ├── GCFL_B.json                  # Generated GCFL clusters
+│   │   └── GCFL_B_diagnostics.json      # Cluster diagnostics and statistics
+│   ├── prompt_pack_construction/
+│   │   ├── make_prompt_pack_v2.py       # Main prompt-pack construction script
+│   │   ├── make_prompt_pack.py          # Earlier prompt-pack construction script
+│   │   ├── GCFL_B_loosen1_prompts_v2.json
+│   │   └── GCFL_B_loosen1_prompts.json
+│   ├── tools/
+│   │   ├── add_scenario.py              # Adds scenario labels to structured feature entries
+│   │   └── summarize_results.py         # Summarizes generated tests and execution outcomes
+│   ├── bug_extraction.py                # Extracts and structures historical bug evidence
+│   └── reported_bugs.pdf                # Summary of reported upstream bugs
+└── README.md
+````
 
 ## Execution contract
 
